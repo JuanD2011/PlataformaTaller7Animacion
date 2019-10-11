@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MenuManager : MonoBehaviour
+public class SettingsTabManager : MonoBehaviour
 {
     [SerializeField]
     protected GameObject[] panels = new GameObject[0];
