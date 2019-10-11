@@ -21,9 +21,9 @@ public class AudioManager : MonoBehaviour
 
     AudioSource currentAudioSource;
 
-    [SerializeField] AudioSetting[] audioSettings = new AudioSetting[2];
+    [SerializeField] private AudioSetting master = null;
 
-    [SerializeField] bool initAudioSettings = false;
+    [SerializeField] private bool initAudioSettings = false;
 
     public AudioSource CurrentAudioSource { get { return currentAudioSource; } }
 
@@ -37,12 +37,9 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        if (audioSettings != null && initAudioSettings)
+        if (master != null && initAudioSettings)
         {
-            foreach (AudioSetting item in audioSettings)
-            {
-                item.Init();
-            }
+            master.Init();
         }
     }
 

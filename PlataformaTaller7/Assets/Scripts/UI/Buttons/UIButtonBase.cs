@@ -6,7 +6,7 @@ public abstract class UIButtonBase : MonoBehaviour
 {
     protected Button m_Button = null;
 
-    protected virtual void Awake()
+    private void Awake()
     {
         m_Button = GetComponent<Button>();
     }

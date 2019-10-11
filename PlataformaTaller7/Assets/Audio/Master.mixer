@@ -49,10 +49,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
-  - guid: 3439594f19eec0c468f07a03042d465a
-    name: MusicVolume
-  - guid: be308131f24863442bc0f8fc780687c6
-    name: SFXVolume
+  - guid: c31ba2edfe28bc14daa0997267254992
+    name: MasterVol
   m_AudioMixerGroupViews:
   - guids:
     - faea30f53b4169740a2214766824abfb
@@ -78,7 +76,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
-  m_UserColorIndex: 0
+  m_UserColorIndex: 3
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0

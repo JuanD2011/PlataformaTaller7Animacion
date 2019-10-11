@@ -10,13 +10,13 @@ public class AudioManagerEditor : Editor
     SerializedProperty audioSourceTemplate = null;
     SerializedProperty audioMixer = null;
 
-    SerializedProperty audioSettings = null;
+    SerializedProperty master = null;
 
     SerializedProperty toggle = null;
 
     private void OnEnable()
     {
-        audioSettings = serializedObject.FindProperty("audioSettings");
+        master = serializedObject.FindProperty("master");
         audioClips = serializedObject.FindProperty("audioClips");
 
         audioSourcesAmount = serializedObject.FindProperty("audioSourcesAmount");
@@ -43,7 +43,7 @@ public class AudioManagerEditor : Editor
 
         if (toggle.boolValue)
         {
-            EditorGUILayout.PropertyField(audioSettings, true);  
+            EditorGUILayout.PropertyField(master);  
         }
         serializedObject.ApplyModifiedProperties();
     }

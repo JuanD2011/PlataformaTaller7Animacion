@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f29af7281885cb4aba03bcc198279aa, type: 3}
   m_Name: AudioClips
   m_EditorClassIdentifier: 
-  inGameMusic: {fileID: 0}
+  menu: {fileID: 8300000, guid: 61b829cfe503f584bbb8dff5415a3bcf, type: 3}
+  ladder: {fileID: 8300000, guid: f615b8bbe98998443b35ddec1c59363b, type: 3}
+  minigame: {fileID: 8300000, guid: 726fb506081e4dd429cea8ec86f3dbd5, type: 3}
   defaultButton: {fileID: 0}
   acceptButton: {fileID: 0}
   cancelButton: {fileID: 0}
   notificationAlert: {fileID: 0}
+  victory: {fileID: 8300000, guid: d098a533e6a5cbc4bbb59e2977ed41e1, type: 3}
+  lose: {fileID: 8300000, guid: e823d0ffa7a4d39449806ccb99ed13bc, type: 3}
