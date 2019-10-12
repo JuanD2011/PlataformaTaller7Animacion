@@ -13,7 +13,12 @@ public class Character : MonoBehaviour
 
     public IEnumerator MoveForward(int _diceResult)
     {
-        for (int i = 0; i < _diceResult; i++)
+        int numberOfBoxes = 0;
+
+        if (CurrentBox + _diceResult <= LadderManager.Manager.Board.Boxes.Length - 1) numberOfBoxes = _diceResult;
+        else numberOfBoxes = LadderManager.Manager.Board.Boxes.Length - 1 - CurrentBox;
+
+        for (int i = 0; i < numberOfBoxes; i++)
         {
             CurrentBox++;
 
@@ -25,7 +30,6 @@ public class Character : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("Aló");
         OnReachDestination?.Invoke();
     }
 
