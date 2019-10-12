@@ -17,7 +17,6 @@ public class Dice : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
         diceSprites = Resources.LoadAll<Sprite>("Dice Sprites/");
         renderer.sprite = diceSprites[5];
-        canThrow = true;
     }
 
     private void OnMouseDown()
@@ -38,7 +37,6 @@ public class Dice : MonoBehaviour
         }
 
         currentNumber = randomDiceSide + 1;
-        SetCanThrow(true);
         OnDiceResult?.Invoke(currentNumber);
     }
 
