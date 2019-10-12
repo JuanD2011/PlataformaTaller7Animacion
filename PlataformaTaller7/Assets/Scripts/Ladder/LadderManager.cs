@@ -15,6 +15,7 @@ public class LadderManager : MonoBehaviour
 
     public Dice Dice { get => dice; private set => dice = value; }
     public Board Board { get => board; private set => board = value; }
+    public Character Character { get => character; private set => character = value; }
 
     private void Awake()
     {
@@ -26,23 +27,27 @@ public class LadderManager : MonoBehaviour
     {
         StartGame();
         dice.OnDiceResult += MoveCharacter;
-        character.OnReachDestination += OnPlayerInBox;
+        Character.OnReachDestination += OnPlayerInBox;
     }
 
     private void OnPlayerInBox()
     {
-        dice.SetCanThrow(true);
+        if (Character.CurrentBox == board.Boxes.Length - 1)
+        {
+            Debug.Log("Game Over");
+        }
+        else dice.SetCanThrow(true);
     }
 
     private void StartGame()
     {
         dice.SetCanThrow(true);
-        character.transform.position = board.Boxes[0].transform.position;
-        character.CurrentBox = 0;
+        Character.transform.position = board.Boxes[0].transform.position;
+        Character.CurrentBox = 0;
     }
 
     private void MoveCharacter(int _diceResult)
     {
-        StartCoroutine(character.MoveForward(_diceResult));
+        StartCoroutine(Character.MoveForward(_diceResult));
     }
 }
