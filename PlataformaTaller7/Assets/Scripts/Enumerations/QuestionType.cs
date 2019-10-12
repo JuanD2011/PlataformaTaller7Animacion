@@ -1,7 +1,7 @@
 ﻿public enum QuestionType
 {
     TrueOrFalse,
-    MultipleChoise,
+    MultipleChoice,
     Association,
     None
 };

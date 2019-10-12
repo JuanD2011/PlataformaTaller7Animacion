@@ -5,9 +5,6 @@ public class SettingsTabManager : MonoBehaviour
     [SerializeField]
     protected GameObject[] panels = new GameObject[0];
 
-    [SerializeField]
-    private Settings settings = null;
-
     protected Animator[] panelAnimators = new Animator[0];
 
     private int currentPanelIndex = 0;
@@ -16,13 +13,11 @@ public class SettingsTabManager : MonoBehaviour
     private readonly string panelFadeOut = "MP Fade-out";
     private readonly string panelFadeInStart = "MP Fade-in Start";
 
-    private readonly string panelModalIn = "MP Modal In";
-    private readonly string panelModalOut = "MP Modal Out";
+    public readonly string panelModalIn = "MP Modal In";
+    public readonly string panelModalOut = "MP Modal Out";
 
     protected virtual void Awake()
     {
-        Memento.LoadData(settings);
-
         InitializePanelAnimators();
     }
 
@@ -67,18 +62,5 @@ public class SettingsTabManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Save settings
-    /// </summary>
-    public void SaveSettings()
-    {
-        Memento.SaveData(settings);
-    }
-
-    private void OnApplicationQuit()
-    {
-        if (settings == null) return;
-
-        Memento.SaveData(settings);
-    }
+    
 }

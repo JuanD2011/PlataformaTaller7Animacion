@@ -15,4 +15,4 @@ MonoBehaviour:
   questions:
   - name: 
     description: 
-    questionType: 0
+    questionType: 1
