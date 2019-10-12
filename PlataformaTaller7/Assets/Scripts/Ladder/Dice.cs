@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Delegates;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class Dice : MonoBehaviour
+public class Dice : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
-    private new SpriteRenderer renderer;
+    private Image m_Image;
     private Sprite[] diceSprites;
     private bool canThrow = false;
 
@@ -14,12 +16,14 @@ public class Dice : MonoBehaviour
 
     private void Awake()
     {
-        renderer = GetComponent<SpriteRenderer>();
+        m_Image = GetComponent<Image>();
         diceSprites = Resources.LoadAll<Sprite>("Dice Sprites/");
-        renderer.sprite = diceSprites[5];
+        m_Image.sprite = diceSprites[5];
     }
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData) { }
+
+    public void OnPointerUp(PointerEventData _EventData)
     {
         if (canThrow) StartCoroutine(Throw());
     }
@@ -32,7 +36,7 @@ public class Dice : MonoBehaviour
         for (int i = 0; i < 15; i++)
         {
             randomDiceSide = Random.Range(0, 6);
-            renderer.sprite = diceSprites[randomDiceSide];
+            m_Image.sprite = diceSprites[randomDiceSide];
             yield return new WaitForSeconds(0.05f);
         }
 
