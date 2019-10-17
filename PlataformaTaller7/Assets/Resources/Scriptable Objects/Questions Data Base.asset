@@ -12,7 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08873bf515e6420439315a0cac650dfa, type: 3}
   m_Name: Questions Data Base
   m_EditorClassIdentifier: 
-  questions:
-  - name: 
-    description: 
-    questionType: 1

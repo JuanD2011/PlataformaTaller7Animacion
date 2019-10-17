@@ -1,35 +1,35 @@
-﻿using UnityEngine;
-using UnityEditor;
+﻿//using UnityEngine;
+//using UnityEditor;
 
-[CustomEditor(typeof(QuestionsDataBase))]
-public class QuestionDataBaseEditor : Editor
-{
-    QuestionsDataBase questionsDataBase = null;
+//[CustomEditor(typeof(QuestionsDataBase))]
+//public class QuestionDataBaseEditor : Editor
+//{
+//    QuestionsDataBase questionsDataBase = null;
 
-    SerializedProperty questions;
+//    SerializedProperty questions;
 
-    MultipleChoice multipleChoice = null;
+//    MultipleChoice multipleChoice = null;
 
-    private void OnEnable()
-    {
-        questionsDataBase = (QuestionsDataBase)target;
-        questions = serializedObject.FindProperty("questions");
-    }
+//    private void OnEnable()
+//    {
+//        questionsDataBase = (QuestionsDataBase)target;
+//        questions = serializedObject.FindProperty("questions");
+//    }
 
-    public override void OnInspectorGUI()
-    {
-        serializedObject.Update();
+//    public override void OnInspectorGUI()
+//    {
+//        serializedObject.Update();
 
-        EditorGUILayout.BeginHorizontal();
+//        EditorGUILayout.BeginHorizontal();
 
-        if (GUILayout.Button("Multiple choice")) questionsDataBase.CreateQuestion(QuestionType.MultipleChoice);
-        if (GUILayout.Button("True or False")) questionsDataBase.CreateQuestion(QuestionType.TrueOrFalse);
-        if (GUILayout.Button("Association")) questionsDataBase.CreateQuestion(QuestionType.Association);
+//        if (GUILayout.Button("Multiple choice")) questionsDataBase.CreateQuestion(QuestionType.MultipleChoice);
+//        if (GUILayout.Button("True or False")) questionsDataBase.CreateQuestion(QuestionType.TrueOrFalse);
+//        if (GUILayout.Button("Association")) questionsDataBase.CreateQuestion(QuestionType.Association);
 
-        EditorGUILayout.EndHorizontal();
+//        EditorGUILayout.EndHorizontal();
 
-        EditorGUILayout.PropertyField(questions, true);
+//        EditorGUILayout.PropertyField(questions, true);
 
-        serializedObject.ApplyModifiedProperties();
-    }
-}
+//        serializedObject.ApplyModifiedProperties();
+//    }
+//}
