@@ -27,6 +27,7 @@ public class CurrencyManager : MonoBehaviour
             {
                 currencyDataBase.seeds += 5;
             }
+            currencyDataBase.OnSeedsUpdated();
             Memento.SaveData(currencyDataBase);
         }
     }
