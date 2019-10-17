@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
     public Sprite CharacterSprite { get; set; }
     public int CurrentBox { get; set; } = 0;
 
-    public event Action OnReachDestination;
+    public event Action<BoxType> OnReachDestination;
 
     public IEnumerator MoveForward(int _diceResult)
     {
@@ -30,12 +30,26 @@ public class Character : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f);
-        OnReachDestination?.Invoke();
+        if (LadderManager.Manager.Board.Boxes[CurrentBox].BoxType != BoxType.Mold) OnReachDestination?.Invoke(LadderManager.Manager.Board.Boxes[CurrentBox].BoxType);
+        else StartCoroutine(MoveBackwards());
     }
 
     private IEnumerator MoveBackwards()
     {
+        for (int i = 0; i < 3; i++)
+        {
+            CurrentBox--;
 
+            while (transform.position != LadderManager.Manager.Board.Boxes[CurrentBox].transform.position)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, LadderManager.Manager.Board.Boxes[CurrentBox].transform.position, moveSpeed * Time.deltaTime);
+                yield return null;
+            }
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        if (LadderManager.Manager.Board.Boxes[CurrentBox].BoxType != BoxType.Mold) OnReachDestination?.Invoke(LadderManager.Manager.Board.Boxes[CurrentBox].BoxType);
+        else StartCoroutine(MoveBackwards());
 
         yield return null;
     }

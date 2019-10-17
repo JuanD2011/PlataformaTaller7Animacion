@@ -30,7 +30,7 @@ public class LadderManager : MonoBehaviour
         Character.OnReachDestination += OnPlayerInBox;
     }
 
-    private void OnPlayerInBox()
+    private void OnPlayerInBox(BoxType _boxType)
     {
         if (Character.CurrentBox == board.Boxes.Length - 1)
         {

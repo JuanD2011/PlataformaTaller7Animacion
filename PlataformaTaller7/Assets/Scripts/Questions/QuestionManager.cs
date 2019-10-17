@@ -25,7 +25,7 @@ public class QuestionManager : MonoBehaviour
         LadderManager.Manager.Character.OnReachDestination += PickAQuestion;
     }
 
-    private void PickAQuestion()
+    private void PickAQuestion(BoxType _boxType)
     {
         do
         {

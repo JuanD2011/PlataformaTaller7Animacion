@@ -17,7 +17,7 @@ public class MenuGameManager : MonoBehaviour
         LadderManager.Manager.Character.OnReachDestination += ActiveQuestionPanel;
     }
 
-    private void ActiveQuestionPanel()
+    private void ActiveQuestionPanel(BoxType _boxType)
     {
         settingsTabManager.ModalAnim(true);
         chestAnimator.Play("Popup Window In");
