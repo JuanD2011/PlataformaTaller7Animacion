@@ -4,6 +4,8 @@ public class CurrencyManager : MonoBehaviour
 {
     [SerializeField] CurrencyDataBase currencyDataBase = null;
 
+    private BoxType boxType = BoxType.None;
+
     private void Awake()
     {
         Memento.LoadData(currencyDataBase);
@@ -11,15 +13,15 @@ public class CurrencyManager : MonoBehaviour
 
     void Start()
     {
-        QuestionManager.OnQuestionAnswered += ManageAnswer;       
+        QuestionManager.OnQuestionAnswered += ManageAnswer;
+        LadderManager.Manager.Character.OnReachDestination += (BoxType _BoxType) => boxType = _BoxType; 
     }
 
     private void ManageAnswer(QuestionAnsweredType _QuestionAnsweredType)
     {
         if (_QuestionAnsweredType == QuestionAnsweredType.Correct)
         {
-            //check if the reward is for 5 seeds
-            if (true)
+            if (boxType != BoxType.Bright)
             {
                 currencyDataBase.seeds += 3;
             }
