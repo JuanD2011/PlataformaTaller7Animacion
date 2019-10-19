@@ -39,11 +39,11 @@ public class UIQuestion : MonoBehaviour
         questionName.text = _Question.name;
         questionDescription.text = _Question.description;
 
-        if (_Question is MultipleChoice)
+        if (_Question.questionType == QuestionType.MultipleChoice)
         {
             settingsTabManager.PanelAnim(0);
         }
-        else if (_Question is TrueOrFalse)
+        else if (_Question.questionType == QuestionType.TrueOrFalse)
         {
             settingsTabManager.PanelAnim(1);
         }

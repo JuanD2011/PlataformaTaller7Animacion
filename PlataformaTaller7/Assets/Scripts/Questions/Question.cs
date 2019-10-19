@@ -39,3 +39,37 @@ public class TrueOrFalse : Question
         questionType = QuestionType.TrueOrFalse;
     }
 }
+
+public class Association : Question
+{
+    public AssociationType associationType = AssociationType.None;
+
+    public System.Collections.Generic.Dictionary<int, string> idToWord = new System.Collections.Generic.Dictionary<int, string>();
+
+    public Association(string _Name, string _Description, AssociationType _AssociationType) : base(_Name, _Description)
+    {
+        questionType = QuestionType.Association;
+        associationType = _AssociationType;
+
+        GenerateDictionary();
+    }
+
+    private void GenerateDictionary()
+    {
+        idToWord.Clear();
+
+        switch (associationType)
+        {
+            case AssociationType.Animals:
+                idToWord.Add(0, "Jirafa");
+                idToWord.Add(1, "Caimán");
+                idToWord.Add(2, "Pájaro");
+                idToWord.Add(3, "Elefante");
+                break;
+            case AssociationType.None:
+                break;
+            default:
+                break;
+        }
+    }
+}

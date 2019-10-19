@@ -2,11 +2,17 @@
 
 public class QuestionManager : MonoBehaviour
 {
-    QuestionsDataBase questionsDataBase = null;
+    private QuestionsDataBase questionsDataBase = null;
 
-    int randomQuestion = 0;
+    private int randomQuestion = 0;
 
-    Question question = null;
+    private Question question = null;
+
+    #region Association Attributes
+    private bool optionSet = false, answerSet = false;
+    private int firstId = 0;
+    private int secondId = 0;
+    #endregion
 
     public static event Delegates.Action<Question> OnQuestionAssigned = null;
     public static event Delegates.Action<QuestionAnsweredType> OnQuestionAnswered = null;
@@ -23,6 +29,37 @@ public class QuestionManager : MonoBehaviour
     void Start()
     {
         LadderManager.Manager.Character.OnReachDestination += PickAQuestion;
+
+        UIAssociationOption.OnAssociationOptionClicked += CheckCoupleAssociation;
+    }
+
+    private void CheckCoupleAssociation(AssociationOptionType _AssociationOptionType, int _Id)
+    {
+        if (_AssociationOptionType == AssociationOptionType.Option)
+        {
+            firstId = _Id;
+            optionSet = true;
+        }
+        else if (_AssociationOptionType == AssociationOptionType.Answer)
+        {
+            secondId = _Id;
+            answerSet = true;
+        }
+
+        if (optionSet && answerSet)
+        {
+            if (firstId == secondId)
+            {
+                Debug.Log("Correct Match");
+            }
+            else
+            {
+                Debug.Log("Wrong Match");
+            }
+
+            optionSet = false;
+            answerSet = false;
+        }
     }
 
     private void PickAQuestion(BoxType _boxType)
@@ -73,5 +110,13 @@ public class QuestionManager : MonoBehaviour
         {
             OnQuestionAnswered(QuestionAnsweredType.Wrong);
         }
+    }
+
+    /// <summary>
+    /// If it is the first time, save the id and compare it with the second touch
+    /// </summary>
+    public void VerifyAssociationCouple()
+    {
+        //TODO
     }
 }
