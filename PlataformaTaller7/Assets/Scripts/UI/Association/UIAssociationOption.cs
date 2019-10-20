@@ -5,24 +5,33 @@ using TMPro;
 public class UIAssociationOption : MonoBehaviour
 {
     [SerializeField] AssociationOptionType associationOptionType = AssociationOptionType.None;
-    private int id = 0;
 
     private Button m_Button = null;
     private TextMeshProUGUI m_Text = null;
+    private Animator m_Animator = null;
+    private Image background = null;
+
+    public const string optionIn = "Option In";
+    public const string optionOut = "Option Out";
 
     public static event Delegates.Action<AssociationOptionType, int> OnAssociationOptionClicked = null;
+
+    public AssociationOptionType AssociationOptionType { get => associationOptionType; private set => associationOptionType = value; }
+    public int Id { get; private set; } = 0;
 
     private void Awake()
     {
         OnAssociationOptionClicked = null;
 
+        background = GetComponentInChildren<Image>();
         m_Text = GetComponentInChildren<TextMeshProUGUI>();
         m_Button = GetComponentInChildren<Button>();
+        m_Animator = GetComponent<Animator>();
     }
 
     private void Start()
     {
-        m_Button.onClick.AddListener(() => OnAssociationOptionClicked(associationOptionType, id));
+        m_Button.onClick.AddListener(() => OnAssociationOptionClicked(AssociationOptionType, Id));
     }
 
     /// <summary>
@@ -30,7 +39,21 @@ public class UIAssociationOption : MonoBehaviour
     /// </summary>
     public void Initialize(int _Id, string _TextValue)
     {
-        id = _Id;
+        Id = _Id;
         m_Text.text = _TextValue;
+    }
+
+    /// <summary>
+    /// Play the state given
+    /// </summary>
+    /// <param name="_StateName"></param>
+    public void Animate(string _StateName)
+    {
+        if (_StateName == optionIn)
+        {
+            background.color = Color.green;
+        }
+
+        m_Animator.Play(_StateName);
     }
 }

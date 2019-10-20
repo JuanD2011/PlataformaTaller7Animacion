@@ -12,14 +12,17 @@ public class QuestionManager : MonoBehaviour
     private bool optionSet = false, answerSet = false;
     private int firstId = 0;
     private int secondId = 0;
+    private byte couplesReached = 0;
     #endregion
 
     public static event Delegates.Action<Question> OnQuestionAssigned = null;
     public static event Delegates.Action<QuestionAnsweredType> OnQuestionAnswered = null;
 
+    public static event Delegates.Action<QuestionAnsweredType, int, int> OnAssociationConnected = null;
+
     private void Awake()
     {
-        OnQuestionAssigned = null; OnQuestionAnswered = null;
+        OnQuestionAssigned = null; OnQuestionAnswered = null; OnAssociationConnected = null;
 
         questionsDataBase = Resources.Load<QuestionsDataBase>("Scriptable Objects/Questions Data Base");
 
@@ -50,11 +53,18 @@ public class QuestionManager : MonoBehaviour
         {
             if (firstId == secondId)
             {
-                Debug.Log("Correct Match");
+                OnAssociationConnected(QuestionAnsweredType.Correct, firstId, secondId);
+                couplesReached += 1;
+
+                if (couplesReached == 4)
+                {
+                    OnQuestionAnswered(QuestionAnsweredType.Correct);
+                    couplesReached = 0;
+                }
             }
             else
             {
-                Debug.Log("Wrong Match");
+                OnAssociationConnected(QuestionAnsweredType.Wrong, firstId, secondId);
             }
 
             optionSet = false;
