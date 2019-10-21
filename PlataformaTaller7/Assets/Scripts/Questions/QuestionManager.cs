@@ -10,19 +10,20 @@ public class QuestionManager : MonoBehaviour
 
     #region Association Attributes
     private bool optionSet = false, answerSet = false;
-    private int firstId = 0;
-    private int secondId = 0;
+    private UIAssociationOption firstUIAssociationOption = null;
+    private UIAssociationOption secondUIAssociationOption = null;
     private byte couplesReached = 0;
     #endregion
 
     public static event Delegates.Action<Question> OnQuestionAssigned = null;
     public static event Delegates.Action<QuestionAnsweredType> OnQuestionAnswered = null;
 
-    public static event Delegates.Action<QuestionAnsweredType, int, int> OnAssociationConnected = null;
+    public static event Delegates.Action<QuestionAnsweredType, UIAssociationOption, UIAssociationOption> OnAssociationConnected = null;
+    public static event Delegates.Action OnAssociationComplete = null;
 
     private void Awake()
     {
-        OnQuestionAssigned = null; OnQuestionAnswered = null; OnAssociationConnected = null;
+        OnQuestionAssigned = null; OnQuestionAnswered = null; OnAssociationConnected = null; OnAssociationComplete = null;
 
         questionsDataBase = Resources.Load<QuestionsDataBase>("Scriptable Objects/Questions Data Base");
 
@@ -36,35 +37,39 @@ public class QuestionManager : MonoBehaviour
         UIAssociationOption.OnAssociationOptionClicked += CheckCoupleAssociation;
     }
 
-    private void CheckCoupleAssociation(AssociationOptionType _AssociationOptionType, int _Id)
+    private void CheckCoupleAssociation(UIAssociationOption _UIAssociationOption)
     {
-        if (_AssociationOptionType == AssociationOptionType.Option)
+        if (_UIAssociationOption.AssociationOptionType == AssociationOptionType.Option)
         {
-            firstId = _Id;
+            firstUIAssociationOption = _UIAssociationOption;
             optionSet = true;
         }
-        else if (_AssociationOptionType == AssociationOptionType.Answer)
+        else if (_UIAssociationOption.AssociationOptionType == AssociationOptionType.Answer)
         {
-            secondId = _Id;
+            secondUIAssociationOption = _UIAssociationOption;
             answerSet = true;
         }
 
         if (optionSet && answerSet)
         {
-            if (firstId == secondId)
+            if (firstUIAssociationOption.Id == secondUIAssociationOption.Id)
             {
-                OnAssociationConnected(QuestionAnsweredType.Correct, firstId, secondId);
+                firstUIAssociationOption.SetInteractability(false);
+                secondUIAssociationOption.SetInteractability(false);
+
+                OnAssociationConnected(QuestionAnsweredType.Correct, firstUIAssociationOption, secondUIAssociationOption);
                 couplesReached += 1;
 
                 if (couplesReached == 4)
                 {
+                    OnAssociationComplete();
                     OnQuestionAnswered(QuestionAnsweredType.Correct);
                     couplesReached = 0;
                 }
             }
             else
             {
-                OnAssociationConnected(QuestionAnsweredType.Wrong, firstId, secondId);
+                OnAssociationConnected(QuestionAnsweredType.Wrong, firstUIAssociationOption, secondUIAssociationOption);
             }
 
             optionSet = false;

@@ -9,6 +9,11 @@ public class UIAssociationOptionsManager : MonoBehaviour
 
     private List<int> optionsIds = new List<int>() { 0, 1, 2, 3 };
 
+    UIAssociationOption currentUIAssociationOption = null;
+
+    private bool isWrong = false;
+    private byte countToDeactivateWrong = 0;
+
     private void Awake()
     {
         associationOptions.AddRange(GetComponentsInChildren<UIAssociationOption>());
@@ -17,53 +22,63 @@ public class UIAssociationOptionsManager : MonoBehaviour
     private void Start()
     {
         QuestionManager.OnQuestionAssigned += InitializeOptions;
-        QuestionManager.OnAssociationConnected += AnimateAssociation;
+        QuestionManager.OnAssociationConnected += ManageConnection;
 
         UIAssociationOption.OnAssociationOptionClicked += ManageOptionUI;
     }
 
-    private void ManageOptionUI(AssociationOptionType _AssociationOptionType, int _Id)
+    private void ManageOptionUI(UIAssociationOption _UIAssociationOption)
     {
-        for (int i = 0; i < associationOptions.Count; i++)
+        if (isWrong)
         {
-            if (associationOptions[i].AssociationOptionType == associationOptionType)
-            {
+            countToDeactivateWrong += 1;
 
+            if (countToDeactivateWrong == 2)
+            {
+                isWrong = false;
+                countToDeactivateWrong = 0;
             }
+        }
+
+        if (!_UIAssociationOption.IsInteractable || isWrong) return;
+
+        if (_UIAssociationOption.AssociationOptionType == associationOptionType)
+        {
+            if (currentUIAssociationOption != null && currentUIAssociationOption.IsInteractable)
+            {
+                currentUIAssociationOption.Animate(UIAssociationOption.optionOut, Color.yellow);
+            }
+
+            currentUIAssociationOption = _UIAssociationOption;
+
+            currentUIAssociationOption.Animate(UIAssociationOption.optionIn, Color.yellow);
         }
     }
 
-    private void AnimateAssociation(QuestionAnsweredType _QuestionAnsweredType, int _FirstId, int _SecondId)
+    private void ManageConnection(QuestionAnsweredType _QuestionAnsweredType, UIAssociationOption _FirstUIAssociationOption, UIAssociationOption _SecondUIAssociationOption)
     {
         if (_QuestionAnsweredType == QuestionAnsweredType.Correct)
         {
-            for (int i = 0; i < associationOptions.Count; i++)
+            if (_FirstUIAssociationOption.AssociationOptionType == associationOptionType)
             {
-                if (associationOptionType == AssociationOptionType.Option)
-                {
-                    if (associationOptions[i].AssociationOptionType == associationOptionType)
-                    {
-                        if (associationOptions[i].Id == _FirstId)
-                        {
-                            associationOptions[i].Animate(UIAssociationOption.optionIn);//TODO verify if I first press the answer and connect it to the option
-                        }
-                    } 
-                }
-                else if (associationOptionType == AssociationOptionType.Answer)
-                {
-                    if (associationOptions[i].AssociationOptionType == associationOptionType)
-                    {
-                        if (associationOptions[i].Id == _SecondId)
-                        {
-                            associationOptions[i].Animate(UIAssociationOption.optionIn);
-                        }
-                    }
-                }
+                _FirstUIAssociationOption.Animate(UIAssociationOption.optionIn, Color.green);
+            }
+            else if (_SecondUIAssociationOption.AssociationOptionType == associationOptionType)
+            {
+                _SecondUIAssociationOption.Animate(UIAssociationOption.optionIn, Color.green);
             }
         }
         else if (_QuestionAnsweredType == QuestionAnsweredType.Wrong)
         {
-
+            if (_FirstUIAssociationOption.AssociationOptionType == associationOptionType)
+            {
+                _FirstUIAssociationOption.Animate(UIAssociationOption.optionOut, Color.red);
+            }
+            else if (_SecondUIAssociationOption.AssociationOptionType == associationOptionType)
+            {
+                _SecondUIAssociationOption.Animate(UIAssociationOption.optionOut, Color.red);
+            }
+            isWrong = true;
         }
     }
 

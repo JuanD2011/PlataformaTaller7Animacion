@@ -20,6 +20,8 @@ public class UIQuestion : MonoBehaviour
     {
         QuestionManager.OnQuestionAssigned += ActivateUIQuestion;
         QuestionManager.OnQuestionAnswered += ActivateUIAnswer;
+
+        QuestionManager.OnAssociationComplete += () => GetComponent<Animator>().Play("Popup Window Out");
     }
 
     private void ActivateUIAnswer(QuestionAnsweredType _QuestionAnsweredType)

@@ -14,10 +14,11 @@ public class UIAssociationOption : MonoBehaviour
     public const string optionIn = "Option In";
     public const string optionOut = "Option Out";
 
-    public static event Delegates.Action<AssociationOptionType, int> OnAssociationOptionClicked = null;
+    public static event Delegates.Action<UIAssociationOption> OnAssociationOptionClicked = null;
 
     public AssociationOptionType AssociationOptionType { get => associationOptionType; private set => associationOptionType = value; }
     public int Id { get; private set; } = 0;
+    public bool IsInteractable { get; private set; } = true;
 
     private void Awake()
     {
@@ -31,7 +32,13 @@ public class UIAssociationOption : MonoBehaviour
 
     private void Start()
     {
-        m_Button.onClick.AddListener(() => OnAssociationOptionClicked(AssociationOptionType, Id));
+        m_Button.onClick.AddListener(() =>
+        {
+            if (IsInteractable)
+            {
+                OnAssociationOptionClicked(this); 
+            }
+        });
     }
 
     /// <summary>
@@ -39,6 +46,7 @@ public class UIAssociationOption : MonoBehaviour
     /// </summary>
     public void Initialize(int _Id, string _TextValue)
     {
+        IsInteractable = true;
         Id = _Id;
         m_Text.text = _TextValue;
     }
@@ -47,13 +55,26 @@ public class UIAssociationOption : MonoBehaviour
     /// Play the state given
     /// </summary>
     /// <param name="_StateName"></param>
-    public void Animate(string _StateName)
+    public void Animate(string _StateName, Color _ImageColor)
     {
-        if (_StateName == optionIn)
-        {
-            background.color = Color.green;
-        }
-
+        background.color = _ImageColor;
         m_Animator.Play(_StateName);
+    }
+
+    /// <summary>
+    /// Set trigger
+    /// </summary>
+    /// <param name="_Id"></param>
+    public void SetTrigger(string _Id)
+    {
+        m_Animator.SetTrigger(_Id);
+    }
+
+    /// <summary>
+    /// Set interactability
+    /// </summary>
+    public void SetInteractability(bool _Value)
+    {
+        IsInteractable = _Value;
     }
 }
