@@ -19,6 +19,7 @@ public class UIAssociationOption : MonoBehaviour
     public AssociationOptionType AssociationOptionType { get => associationOptionType; private set => associationOptionType = value; }
     public int Id { get; private set; } = 0;
     public bool IsInteractable { get; private set; } = true;
+    public Transform Reference { get; private set; } = null;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class UIAssociationOption : MonoBehaviour
         m_Text = GetComponentInChildren<TextMeshProUGUI>();
         m_Button = GetComponentInChildren<Button>();
         m_Animator = GetComponent<Animator>();
+        Reference = transform.GetChild(1);
     }
 
     private void Start()

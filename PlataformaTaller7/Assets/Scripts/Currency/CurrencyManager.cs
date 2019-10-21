@@ -8,7 +8,9 @@ public class CurrencyManager : MonoBehaviour
 
     private void Awake()
     {
-        Memento.LoadData(currencyDataBase);
+#if !UNITY_EDITOR
+        Memento.LoadData(currencyDataBase); 
+#endif
     }
 
     void Start()
@@ -32,5 +34,10 @@ public class CurrencyManager : MonoBehaviour
             currencyDataBase.OnSeedsUpdated();
             Memento.SaveData(currencyDataBase);
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        Memento.SaveData(currencyDataBase);
     }
 }
