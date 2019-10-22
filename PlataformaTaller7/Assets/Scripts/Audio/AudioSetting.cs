@@ -7,6 +7,7 @@ public class AudioSetting : MonoBehaviour
     [SerializeField] AudioMixer audioMixer = null;
     [SerializeField] Settings settings = null;
     [SerializeField] Image m_Image = null;
+    [SerializeField] private Color disabledColor = Color.white;
 
     private readonly float mutedVolume = -80f;
 
@@ -48,7 +49,7 @@ public class AudioSetting : MonoBehaviour
         }
         else
         {
-            m_Image.color = Color.red;
+            m_Image.color = disabledColor;
         }
     }
 }

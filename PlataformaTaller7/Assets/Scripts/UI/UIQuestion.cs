@@ -5,7 +5,7 @@ public class UIQuestion : MonoBehaviour
 {
     SettingsTabManager settingsTabManager = null;
 
-    [SerializeField] TextMeshProUGUI questionName = null, questionDescription = null;
+    [SerializeField] TextMeshProUGUI questionDescription = null;
 
     [SerializeField] Animator correctAnswer = null, wrongAnswer = null;
 
@@ -38,7 +38,6 @@ public class UIQuestion : MonoBehaviour
 
     private void ActivateUIQuestion(Question _Question)
     {
-        questionName.text = _Question.name;
         questionDescription.text = _Question.description;
 
         if (_Question.questionType == QuestionType.MultipleChoice)

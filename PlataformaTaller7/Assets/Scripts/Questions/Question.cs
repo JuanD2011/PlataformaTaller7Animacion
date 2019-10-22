@@ -1,29 +1,23 @@
 ﻿public class Question
 {
-    public string name = "";
     public string description = "";
     public QuestionType questionType = QuestionType.None;
 
-    public Question(string _Name, string _Description)
+    public Question(string _Description)
     {
-        name = _Name;
         description = _Description;
     }
 }
 
 public class MultipleChoice : Question
 {
-    public string firstOption = "";
-    public string secondOption = "";
-    public string thirdOption = "";
+    public string[] options = new string[3];
 
     public byte correctAnswer = 0;
 
-    public MultipleChoice(string _Name, string _Description, string _FirstOption, string _SecondOption, string _ThirdOption, byte _CorrectAnswer) : base(_Name, _Description)
+    public MultipleChoice(string _Description, string[] _Options, byte _CorrectAnswer) : base(_Description)
     {
-        firstOption = _FirstOption;
-        secondOption = _SecondOption;
-        thirdOption = _ThirdOption;
+        options = _Options;
         correctAnswer = _CorrectAnswer;
         questionType = QuestionType.MultipleChoice;
     }
@@ -33,7 +27,7 @@ public class TrueOrFalse : Question
 {
     public bool answer = false;
 
-    public TrueOrFalse(string _Name, string _Description, bool _Answer) : base(_Name, _Description)
+    public TrueOrFalse(string _Description, bool _Answer) : base(_Description)
     {
         answer = _Answer;
         questionType = QuestionType.TrueOrFalse;
@@ -46,7 +40,7 @@ public class Association : Question
 
     public System.Collections.Generic.Dictionary<int, string> idToWord = new System.Collections.Generic.Dictionary<int, string>();
 
-    public Association(string _Name, string _Description, AssociationType _AssociationType) : base(_Name, _Description)
+    public Association(string _Description, AssociationType _AssociationType) : base(_Description)
     {
         questionType = QuestionType.Association;
         associationType = _AssociationType;
