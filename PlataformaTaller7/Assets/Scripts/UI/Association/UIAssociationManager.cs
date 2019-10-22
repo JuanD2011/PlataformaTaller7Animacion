@@ -27,7 +27,7 @@ public class UIAssociationManager : MonoBehaviour
         {
             if (!uIAssociationLines[i].IsPlaced)
             {
-                uIAssociationLines[i].SetPosition(_FirstUIAssociationOption.Reference.position, _SecondUIAssociationOption.Reference.position);
+                uIAssociationLines[i].SetPosition(_FirstUIAssociationOption.transform.localPosition, _SecondUIAssociationOption.transform.localPosition);
                 return;
             }
         }

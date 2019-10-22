@@ -12,7 +12,6 @@ public class UIAssociationOptionsManager : MonoBehaviour
     UIAssociationOption currentUIAssociationOption = null;
 
     private bool isWrong = false;
-    private byte countToDeactivateWrong = 0;
 
     private void Awake()
     {
@@ -29,22 +28,13 @@ public class UIAssociationOptionsManager : MonoBehaviour
 
     private void ManageOptionUI(UIAssociationOption _UIAssociationOption)
     {
-        if (isWrong)
-        {
-            countToDeactivateWrong += 1;
-
-            if (countToDeactivateWrong == 2)
-            {
-                isWrong = false;
-                countToDeactivateWrong = 0;
-            }
-        }
+        if (isWrong) isWrong = false;
 
         if (!_UIAssociationOption.IsInteractable || isWrong) return;
 
         if (_UIAssociationOption.AssociationOptionType == associationOptionType)
         {
-            if (currentUIAssociationOption != null && currentUIAssociationOption.IsInteractable)
+            if (currentUIAssociationOption != null && currentUIAssociationOption.IsInteractable && currentUIAssociationOption != _UIAssociationOption)
             {
                 currentUIAssociationOption.Animate(UIAssociationOption.optionOut, Color.yellow);
             }
@@ -80,6 +70,7 @@ public class UIAssociationOptionsManager : MonoBehaviour
             }
             isWrong = true;
         }
+        currentUIAssociationOption = null;
     }
 
     private void InitializeOptions(Question _Question)

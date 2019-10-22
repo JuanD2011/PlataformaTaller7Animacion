@@ -41,6 +41,14 @@ public class UIAssociationOption : MonoBehaviour
                 OnAssociationOptionClicked(this); 
             }
         });
+
+        QuestionManager.OnAssociationComplete += ResetState;
+    }
+
+    private void ResetState()
+    {
+        SetInteractability(true);
+        Animate(optionOut, Color.white);
     }
 
     /// <summary>
