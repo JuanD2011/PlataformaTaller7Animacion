@@ -7,6 +7,7 @@ public class SettingsTabManager : MonoBehaviour
 
     protected Animator[] panelAnimators = new Animator[0];
 
+    [SerializeField]
     private int currentPanelIndex = 0;
 
     private readonly string panelFadeIn = "MP Fade-in";
@@ -23,6 +24,16 @@ public class SettingsTabManager : MonoBehaviour
 
     protected virtual void Start()
     {
+        InitializeFirstPanel(currentPanelIndex);
+    }
+
+    /// <summary>
+    /// Initialize first panel animation
+    /// </summary>
+    /// <param name="_Index"></param>
+    public void InitializeFirstPanel(int _Index)
+    {
+        currentPanelIndex = _Index;
         panelAnimators[currentPanelIndex].Play(panelFadeInStart);
     }
 

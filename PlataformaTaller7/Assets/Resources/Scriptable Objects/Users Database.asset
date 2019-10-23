@@ -9,7 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb91790ffa7d1542882d6435cfb7a07, type: 3}
-  m_Name: Currency Data Base
+  m_Script: {fileID: 11500000, guid: da79541925b25c34aa58fb1d1d729599, type: 3}
+  m_Name: Users Database
   m_EditorClassIdentifier: 
-  seeds: 0
+  users:
+  - username: Elizabeth
+    password: Elizabeth
+  - username: Mariana
+    password: Mariana
+  - username: Daniel
+    password: Daniel
+  - username: Juan
+    password: Juan

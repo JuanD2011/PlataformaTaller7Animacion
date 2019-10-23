@@ -2,7 +2,7 @@
 
 public class CurrencyManager : MonoBehaviour
 {
-    [SerializeField] CurrencyDataBase currencyDataBase = null;
+    [SerializeField] CurrencyDatabase currencyDataBase = null;
 
     private BoxType boxType = BoxType.None;
 

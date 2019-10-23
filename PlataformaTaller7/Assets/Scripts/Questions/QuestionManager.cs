@@ -2,7 +2,7 @@
 
 public class QuestionManager : MonoBehaviour
 {
-    private QuestionsDataBase questionsDataBase = null;
+    private QuestionsDatabase questionsDataBase = null;
 
     private int randomQuestion = 0;
 
@@ -25,7 +25,7 @@ public class QuestionManager : MonoBehaviour
     {
         OnQuestionAssigned = null; OnQuestionAnswered = null; OnAssociationConnected = null; OnAssociationComplete = null;
 
-        questionsDataBase = Resources.Load<QuestionsDataBase>("Scriptable Objects/Questions Data Base");
+        questionsDataBase = Resources.Load<QuestionsDatabase>("Scriptable Objects/Questions Database");
 
         questionsDataBase.CreateQuestions();
     }

@@ -5,12 +5,12 @@ using TMPro;
 
 public class UISeeds : MonoBehaviour
 {
-    CurrencyDataBase currencyDataBase = null;
+    CurrencyDatabase currencyDataBase = null;
     TextMeshProUGUI m_Text = null;
 
     private void Awake()
     {
-        currencyDataBase = Resources.Load<CurrencyDataBase>("Scriptable Objects/Currency Data Base");
+        currencyDataBase = Resources.Load<CurrencyDatabase>("Scriptable Objects/Currency Database");
         m_Text = GetComponent<TextMeshProUGUI>();
 
         UpdateSeedsText();

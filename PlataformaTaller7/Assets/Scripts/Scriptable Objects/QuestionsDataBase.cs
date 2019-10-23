@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "Questions Data Base", menuName = "Questions Data Base")]
-public class QuestionsDataBase : ScriptableObject
+public class QuestionsDatabase : ScriptableObject
 {
     public List<Question> Questions { get; private set; } = null;
 

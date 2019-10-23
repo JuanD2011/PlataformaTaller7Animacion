@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08873bf515e6420439315a0cac650dfa, type: 3}
-  m_Name: Questions Data Base
+  m_Script: {fileID: 11500000, guid: ceb91790ffa7d1542882d6435cfb7a07, type: 3}
+  m_Name: Currency Database
   m_EditorClassIdentifier: 
+  seeds: 0
