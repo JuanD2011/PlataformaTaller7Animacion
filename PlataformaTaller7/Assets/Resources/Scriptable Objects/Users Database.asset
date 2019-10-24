@@ -15,9 +15,21 @@ MonoBehaviour:
   users:
   - username: Elizabeth
     password: Elizabeth
+    sprite: {fileID: 0}
+    properties:
+      male: 0
   - username: Mariana
     password: Mariana
+    sprite: {fileID: 0}
+    properties:
+      male: 0
   - username: Daniel
     password: Daniel
+    sprite: {fileID: 0}
+    properties:
+      male: 1
   - username: Juan
     password: Juan
+    sprite: {fileID: 0}
+    properties:
+      male: 1
