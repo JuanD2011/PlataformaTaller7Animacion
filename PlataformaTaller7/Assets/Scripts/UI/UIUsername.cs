@@ -12,6 +12,8 @@ public class UIUsername : MonoBehaviour
 
     private void Start()
     {
+        if (UsersDatabase.CurrentUser != null) SetUsernameText(true);
+
         LogInManager.OnLoggedIn += SetUsernameText;
     }
 

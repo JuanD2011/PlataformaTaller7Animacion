@@ -10,6 +10,9 @@ public class SettingsTabManager : MonoBehaviour
     [SerializeField]
     private int currentPanelIndex = 0;
 
+    [SerializeField]
+    private bool initFirstPanel = true;
+
     private readonly string panelFadeIn = "MP Fade-in";
     private readonly string panelFadeOut = "MP Fade-out";
     private readonly string panelFadeInStart = "MP Fade-in Start";
@@ -24,7 +27,10 @@ public class SettingsTabManager : MonoBehaviour
 
     protected virtual void Start()
     {
-        InitializeFirstPanel(currentPanelIndex);
+        if (initFirstPanel)
+        {
+            InitializeFirstPanel(currentPanelIndex); 
+        }
     }
 
     /// <summary>
@@ -49,12 +55,9 @@ public class SettingsTabManager : MonoBehaviour
     /// <param name="_newPanelIndex"></param>
     public void PanelAnim(int _newPanelIndex)
     {
-        if (_newPanelIndex != currentPanelIndex)
-        {
-            panelAnimators[currentPanelIndex].Play(panelFadeOut);
-            currentPanelIndex = _newPanelIndex;
-            panelAnimators[currentPanelIndex].Play(panelFadeIn);
-        }
+        panelAnimators[currentPanelIndex].Play(panelFadeOut);
+        currentPanelIndex = _newPanelIndex;
+        panelAnimators[currentPanelIndex].Play(panelFadeIn);
     }
 
     /// <summary>
@@ -73,5 +76,11 @@ public class SettingsTabManager : MonoBehaviour
         }
     }
 
-    
+    /// <summary>
+    /// Anim current panel out
+    /// </summary>
+    public void PanelOut()
+    {
+        panelAnimators[currentPanelIndex].Play(panelFadeOut);
+    }
 }
