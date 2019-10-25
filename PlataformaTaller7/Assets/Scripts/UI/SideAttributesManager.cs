@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class SideAttributesManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class SideAttributesManager : MonoBehaviour
     private byte panelIndex = 0;
 
     private Animator m_Animator = null;
+
+    Dictionary<int, int> a = new Dictionary<int, int>();
 
     private readonly string slideOut = "Slide Out";
     private readonly string slideIn = "Slide In";
