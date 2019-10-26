@@ -15,21 +15,21 @@ MonoBehaviour:
   users:
   - username: Elizabeth
     password: Elizabeth
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: b0501af463d66a1478e8e259d27bc62e, type: 3}
     properties:
       male: 0
   - username: Mariana
     password: Mariana
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: b50fc511267079d4cb421c2e92872c5e, type: 3}
     properties:
       male: 0
   - username: Daniel
     password: Daniel
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: bfb177fdb1a5518459a11e5389fd0d6d, type: 3}
     properties:
       male: 1
   - username: Juan
     password: Juan
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: a026693eb3acce742839cd4d477b880b, type: 3}
     properties:
       male: 1
