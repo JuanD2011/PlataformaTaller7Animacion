@@ -10,8 +10,14 @@ public class ButtonsManager : MonoBehaviour
 
     protected Animator[] buttonsAnimator = new Animator[0];
 
-    private readonly string buttonFadeIn = "B Fade-in";
-    private readonly string buttonFadeOut = "B Fade-out";
+    [SerializeField]
+    private string buttonFadeIn = "B Fade-in";
+
+    [SerializeField]
+    private string buttonFadeOut = "B Fade-out";
+
+    [SerializeField]
+    private bool initFirstButton = true;
 
     private void Awake()
     {
@@ -21,10 +27,13 @@ public class ButtonsManager : MonoBehaviour
 
     protected virtual void Start()
     {
-        InitializeFirstButton(currentbuttonIndex);
+        if (initFirstButton)
+        {
+            InitializeFirstButton(currentbuttonIndex); 
+        }
     }
 
-    private void InitializeFirstButton(int _Index)
+    public void InitializeFirstButton(int _Index)
     {
         currentbuttonIndex = _Index;
         buttonsAnimator[currentbuttonIndex].Play(buttonFadeIn);

@@ -5,9 +5,13 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private Settings settings = null;
 
+    [SerializeField]
+    private UsersDatabase usersDatabase = null;
+
     private void Awake()
     {
         Memento.LoadData(settings);
+        Memento.LoadData(usersDatabase);
     }
 
     /// <summary>
@@ -18,10 +22,21 @@ public class MenuManager : MonoBehaviour
         Memento.SaveData(settings);
     }
 
+    public void SaveUsersDatabase()
+    {
+        Memento.SaveData(usersDatabase);
+    }
+
     private void OnApplicationQuit()
     {
-        if (settings == null) return;
+        if (settings != null)
+        {
+            SaveSettings();
+        }
 
-        Memento.SaveData(settings);
+        if (usersDatabase != null)
+        {
+            SaveUsersDatabase();
+        }
     }
 }
