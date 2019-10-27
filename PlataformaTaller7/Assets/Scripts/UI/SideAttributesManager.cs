@@ -4,15 +4,13 @@ using System.Collections.Generic;
 public class SideAttributesManager : MonoBehaviour
 {
     [SerializeField]
-    private byte manHairstyle = 0, womanHairstyle = 0, manUniform = 0, womanUniform = 0, manAccessories = 0, womanAccessories = 0;
+    private byte manHairstyle = 0, womanHairstyle = 0, manUniform = 0, womanUniform = 0;
 
     private SettingsTabManager settingsTabManager = null;
 
     private byte panelIndex = 0;
 
     private Animator m_Animator = null;
-
-    Dictionary<int, int> a = new Dictionary<int, int>();
 
     private readonly string slideOut = "Slide Out";
     private readonly string slideIn = "Slide In";
@@ -74,12 +72,6 @@ public class SideAttributesManager : MonoBehaviour
                     UniformPanelAnim(); 
                 }
                 break;
-            case 2:
-                if (isIn)
-                {
-                    AccessoriesPanelAnim(); 
-                }
-                break;
             default:
                 break;
         }
@@ -116,23 +108,6 @@ public class SideAttributesManager : MonoBehaviour
         {
             settingsTabManager.PanelAnim(womanUniform);
             panelIndex = womanUniform;
-        }
-    }
-
-    /// <summary>
-    /// Active accessories panel depending on users genre
-    /// </summary>
-    public void AccessoriesPanelAnim()
-    {
-        if (UsersDatabase.CurrentUser.properties.male)
-        {
-            settingsTabManager.PanelAnim(manAccessories);
-            panelIndex = manAccessories;
-        }
-        else
-        {
-            settingsTabManager.PanelAnim(womanAccessories);
-            panelIndex = womanAccessories;
         }
     }
 }
