@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Currency Data Base", menuName = "Currency Data Base")]
+[CreateAssetMenu(fileName = "Currency Database", menuName = "Currency Database")]
 public class CurrencyDatabase : ScriptableObject
 {
     public Delegates.Action OnSeedsUpdated = null;
