@@ -19,7 +19,7 @@ public class QuestionsDatabase : ScriptableObject
 
         Questions.Add(new MultipleChoice("Cuál es el carro más rápido", new string[3] {"Bugatti", "Tesla", "Renault 8" }, 0));
         Questions.Add(new TrueOrFalse("¿Es cierto que Confucio inventó la confusión?", false));
-        Questions.Add(new Association("Conecta las imágenes con sus nombres respectivos", AssociationType.Animals));
+        Questions.Add(new Association("Animales", "Ecosistema", AssociationType.Animals));
     }
 
     /// <summary>

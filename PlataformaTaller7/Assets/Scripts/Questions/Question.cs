@@ -38,10 +38,15 @@ public class Association : Question
 {
     public AssociationType associationType = AssociationType.None;
 
+    public string leftColumn = "", rightColumn = "";
+
     public System.Collections.Generic.Dictionary<int, string> idToWord = new System.Collections.Generic.Dictionary<int, string>();
 
-    public Association(string _Description, AssociationType _AssociationType) : base(_Description)
+    public Association(string _LeftColumn, string _RightColumn, AssociationType _AssociationType) : base("")
     {
+        leftColumn = _LeftColumn;
+        rightColumn = _RightColumn;
+
         questionType = QuestionType.Association;
         associationType = _AssociationType;
 
