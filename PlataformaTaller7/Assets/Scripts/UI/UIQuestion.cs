@@ -56,7 +56,7 @@ public class UIQuestion : MonoBehaviour
         }
         else
         {
-            Association association = _Question as Association;
+            association = _Question as Association;
 
             leftColumn.text = association.leftColumn;
             rightColumn.text = association.rightColumn;
