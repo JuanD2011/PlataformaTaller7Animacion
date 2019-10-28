@@ -29,14 +29,8 @@ public class MenuManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        if (settings != null)
-        {
-            SaveSettings();
-        }
+        if (settings != null) SaveSettings();
 
-        if (usersDatabase != null)
-        {
-            SaveUsersDatabase();
-        }
+        if (usersDatabase != null) SaveUsersDatabase();
     }
 }
