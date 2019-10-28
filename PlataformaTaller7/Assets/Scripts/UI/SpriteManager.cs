@@ -12,12 +12,16 @@ public class SpriteManager : MonoBehaviour
 
     private void Awake()
     {
+        OnSpriteUpdated = null;
+
         profileSprites = Resources.LoadAll<Sprite>(path);
     }
 
     private void Start()
     {
         LogInManager.OnLoggedIn += SetFirstProfileSprite;
+
+        if (UsersDatabase.CurrentUser != null) SetFirstProfileSprite(true);
     }
 
     private void SetFirstProfileSprite(bool _LoggedIn)

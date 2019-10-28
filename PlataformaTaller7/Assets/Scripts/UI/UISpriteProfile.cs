@@ -15,6 +15,11 @@ public class UISpriteProfile : MonoBehaviour
         SpriteManager.OnSpriteUpdated += UpdateImageSprite;
 
         LogInManager.OnLoggedIn += UpdateImageSprite;
+
+        if (UsersDatabase.CurrentUser != null)
+        {
+            m_Image.sprite = UsersDatabase.CurrentUser.sprite;
+        }
     }
 
     private void UpdateImageSprite(bool _LoggedIn)

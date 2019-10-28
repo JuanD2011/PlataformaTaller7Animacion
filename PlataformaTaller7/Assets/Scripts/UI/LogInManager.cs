@@ -19,7 +19,10 @@ public class LogInManager : MonoBehaviour
 
         usersDatabase = Resources.Load<UsersDatabase>("Scriptable Objects/Users Database");
         settingsTabManager = GetComponent<SettingsTabManager>();
+    }
 
+    private void Start()
+    {
         if (haveLoggedIn) settingsTabManager.InitializeFirstPanel(0);
     }
 
