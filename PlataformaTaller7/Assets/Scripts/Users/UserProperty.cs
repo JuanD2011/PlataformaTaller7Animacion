@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
 public class UserProperty
@@ -9,6 +8,8 @@ public class UserProperty
 
     public Sprite[] hairstyle = null, accessory = null;
     public Sprite outfit = null;
+
+    public static event Delegates.Action OnCharacterUpdate = null;
 
     /// <summary>
     /// Changing between male and female

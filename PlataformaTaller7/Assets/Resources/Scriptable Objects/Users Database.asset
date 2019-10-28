@@ -18,18 +18,38 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: bfb177fdb1a5518459a11e5389fd0d6d, type: 3}
     properties:
       male: 0
+      skinColor: {r: 1, g: 1, b: 1, a: 1}
+      hairColor: {r: 1, g: 1, b: 1, a: 1}
+      hairstyle: []
+      accessory: []
+      outfit: {fileID: 0}
   - username: Mariana
     password: Mariana
     sprite: {fileID: 21300000, guid: b0501af463d66a1478e8e259d27bc62e, type: 3}
     properties:
       male: 0
+      skinColor: {r: 1, g: 1, b: 1, a: 1}
+      hairColor: {r: 1, g: 1, b: 1, a: 1}
+      hairstyle: []
+      accessory: []
+      outfit: {fileID: 0}
   - username: Daniel
     password: Daniel
     sprite: {fileID: 21300000, guid: 15c4e5b3c0e4ed54f9cd1e24cc2809b4, type: 3}
     properties:
       male: 1
+      skinColor: {r: 1, g: 1, b: 1, a: 1}
+      hairColor: {r: 1, g: 1, b: 1, a: 1}
+      hairstyle: []
+      accessory: []
+      outfit: {fileID: 0}
   - username: Juan
     password: Juan
     sprite: {fileID: 21300000, guid: 6f30055e5d5d577479173bfeccad4bf7, type: 3}
     properties:
-      male: 1
+      male: 0
+      skinColor: {r: 1, g: 1, b: 1, a: 1}
+      hairColor: {r: 1, g: 1, b: 1, a: 1}
+      hairstyle: []
+      accessory: []
+      outfit: {fileID: 0}
