@@ -11,6 +11,9 @@ public class SettingsTabManager : MonoBehaviour
     private int currentPanelIndex = 0;
 
     [SerializeField]
+    private bool outIfTheSameIndex = true;
+
+    [SerializeField]
     private bool initFirstPanel = true;
 
     private readonly string panelFadeIn = "MP Fade-in";
@@ -55,7 +58,22 @@ public class SettingsTabManager : MonoBehaviour
     /// <param name="_newPanelIndex"></param>
     public void PanelAnim(int _newPanelIndex)
     {
+        if (outIfTheSameIndex)
+        {
+            panelAnimators[currentPanelIndex].Play(panelFadeOut);
+            currentPanelIndex = _newPanelIndex;
+            panelAnimators[currentPanelIndex].Play(panelFadeIn);
+        }
+        else
+        {
+            StartCoroutine(PanelIn(_newPanelIndex));
+        }
+    }
+
+    System.Collections.IEnumerator PanelIn(int _newPanelIndex)
+    {
         panelAnimators[currentPanelIndex].Play(panelFadeOut);
+        yield return new WaitUntil(() =>panelAnimators[currentPanelIndex].GetCurrentAnimatorStateInfo(0).IsName(panelFadeOut));
         currentPanelIndex = _newPanelIndex;
         panelAnimators[currentPanelIndex].Play(panelFadeIn);
     }

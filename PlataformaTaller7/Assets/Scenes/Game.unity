@@ -6459,6 +6459,7 @@ MonoBehaviour:
   - {fileID: 132920794}
   - {fileID: 1809742802}
   currentPanelIndex: 0
+  outIfTheSameIndex: 0
   initFirstPanel: 0
 --- !u!1001 &1361043991
 PrefabInstance:
