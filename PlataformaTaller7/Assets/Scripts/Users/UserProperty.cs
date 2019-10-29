@@ -8,7 +8,7 @@ public class UserProperty
 
     public int hairstyle = 0, outfit = 0, accessory = 0;
 
-    public static event Delegates.Action OnCharacterUpdate = null;
+    public static Delegates.Action OnCharacterUpdate = null;
 
     /// <summary>
     /// Changing between male and female
@@ -16,35 +16,35 @@ public class UserProperty
     public void ChangeGenre()
     {
         male = male ? male = false : male = true;
-        OnCharacterUpdate?.Invoke();
+        OnCharacterUpdate();
     }
 
     public void SetSkinColor(Color _color)
     {
         skinColor = _color;
-        OnCharacterUpdate?.Invoke();
+        OnCharacterUpdate();
     }
 
     public void SetHairColor(Color _color)
     {
         hairColor = _color;
-        OnCharacterUpdate?.Invoke();
+        OnCharacterUpdate();
     }
 
     public void SetHairstyle(int _hairstyleId)
     {
         hairstyle = _hairstyleId;
-        OnCharacterUpdate?.Invoke();
+        OnCharacterUpdate();
     }
 
     public void SetOutfit(int _outfitId)
     {
         outfit = _outfitId;
-        OnCharacterUpdate?.Invoke();
+        OnCharacterUpdate();
     }
     public void SetAccessory(int _accessoryId)
     {
         accessory = _accessoryId;
-        OnCharacterUpdate?.Invoke();
+        OnCharacterUpdate();
     }
 }

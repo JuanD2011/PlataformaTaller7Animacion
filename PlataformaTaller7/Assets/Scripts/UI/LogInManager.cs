@@ -62,4 +62,17 @@ public class LogInManager : MonoBehaviour
         }
         OnLoggedIn(false);
     }
+
+#if UNITY_EDITOR
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            UsersDatabase.CurrentUser = usersDatabase.Users[0];
+            settingsTabManager.PanelAnim(0);
+            haveLoggedIn = true;
+            OnLoggedIn(true);
+        }
+    }
+#endif
 }

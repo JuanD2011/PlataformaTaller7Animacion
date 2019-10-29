@@ -7,7 +7,7 @@ public class CharacterVisualizationManager : MonoBehaviour
 
     private void Awake()
     {
-        //UserProperty.OnCharacterUpdate -= UpdateCharacter;
+        UserProperty.OnCharacterUpdate = null;
     }
 
     private void Start()
@@ -16,7 +16,12 @@ public class CharacterVisualizationManager : MonoBehaviour
         UserProperty.OnCharacterUpdate += UpdateCharacter;
     }
 
-    private void OnLoggedIn(bool _value) => UpdateCharacter();
+    private void OnLoggedIn(bool _value)
+    {
+        if (!_value) return;
+
+        UpdateCharacter();
+    }
 
     private void UpdateCharacter()
     {
