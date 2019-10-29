@@ -23,7 +23,7 @@ public class CharacterVisualizationManager : MonoBehaviour
         UpdateCharacter();
     }
 
-    private void UpdateCharacter()
+    public void UpdateCharacter()
     {
         if (UsersDatabase.CurrentUser.properties.male)
         {
