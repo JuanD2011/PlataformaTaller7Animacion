@@ -3,7 +3,7 @@
 public class UIHairColorButton : MonoBehaviour
 {
     [SerializeField]
-    private Color hairColor = Color.white;
+    private Color hairColor = Color.black;
 
     public void OnButtonClicked()
     {
