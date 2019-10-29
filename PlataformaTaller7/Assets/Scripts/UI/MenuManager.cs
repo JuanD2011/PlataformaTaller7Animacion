@@ -11,7 +11,9 @@ public class MenuManager : MonoBehaviour
     private void Awake()
     {
         Memento.LoadData(settings);
+#if !UNITY_EDITOR
         Memento.LoadData(usersDatabase);
+#endif
     }
 
     /// <summary>
