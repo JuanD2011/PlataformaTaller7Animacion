@@ -54,7 +54,7 @@ public class LogInManager : MonoBehaviour
             if (usersDatabase.Users[i].username == username && usersDatabase.Users[i].password == password)
             {
                 UsersDatabase.CurrentUser = usersDatabase.Users[i];
-                settingsTabManager.PanelAnim(3);
+                settingsTabManager.PanelAnim(2);
                 haveLoggedIn = true;
                 OnLoggedIn(true);
                 return;
@@ -69,7 +69,7 @@ public class LogInManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             UsersDatabase.CurrentUser = usersDatabase.Users[0];
-            settingsTabManager.PanelAnim(3);
+            settingsTabManager.PanelAnim(2);
             haveLoggedIn = true;
             OnLoggedIn(true);
         }
