@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.UI.Extensions;
+using UnityEngine.UI;
+using System.Collections;
 
 public class UIAssociationLine : MonoBehaviour
 {
-    private LineRenderer uILineRenderer = null;
+    private Image line = null;
+    private RectTransform lineTransform = null;
+    private float targetHeight = 0f;
 
     [SerializeField]
     private float timeToLerp = 2f;
@@ -12,7 +15,8 @@ public class UIAssociationLine : MonoBehaviour
 
     private void Awake()
     {
-        uILineRenderer = GetComponent<LineRenderer>();
+        line = GetComponentInChildren<Image>();
+        lineTransform = line.GetComponent<RectTransform>();
     }
 
     private void Start()
@@ -22,28 +26,27 @@ public class UIAssociationLine : MonoBehaviour
 
     public void SetPosition(Vector3 _FirstPoint, Vector3 _SecondPoint)
     {
-        //IsPlaced = true;
+        transform.position = _FirstPoint;
+        lineTransform.rotation = Quaternion.LookRotation(_SecondPoint - _FirstPoint, line.transform.forward);
+        targetHeight = (_SecondPoint - _FirstPoint).sqrMagnitude;
 
-        //StopAllCoroutines();
-
-        //uILineRenderer.SetPosition(0, _FirstPoint);
-        //uILineRenderer.SetPosition(1, _SecondPoint);
-
-        //StartCoroutine(LerpSecondPoint(_SecondPoint));
+        StartCoroutine(LerpLine());
     }
 
-    //System.Collections.IEnumerator LerpSecondPoint(Vector3 _SecondPoint)
-    //{
-    //    float elapsedTime = 0;
+    private IEnumerator LerpLine()
+    {
+        float elapsedTime = 0f;
+        Vector2 targetDelta = new Vector2();
+        Vector2 targetPosition = new Vector2();
 
-    //    while (elapsedTime < timeToLerp)
-    //    {
-    //        uILineRenderer.Points[1] = Vector3.Lerp(uILineRenderer.Points[0], _SecondPoint, elapsedTime / timeToLerp);
-
-    //        elapsedTime += Time.deltaTime;
-    //        yield return null;
-    //    }
-
-    //    uILineRenderer.Points[1] = _SecondPoint;
-    //}
+        while (elapsedTime < timeToLerp)
+        {
+            targetDelta = new Vector2(lineTransform.sizeDelta.x, Mathf.Lerp(lineTransform.sizeDelta.y, targetHeight, elapsedTime / timeToLerp));
+            lineTransform.sizeDelta = targetDelta;
+            targetPosition = new Vector2(lineTransform.position.x, Mathf.Lerp(lineTransform.position.y, targetHeight / 2, elapsedTime / timeToLerp));
+            lineTransform.position = targetPosition;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
 }
