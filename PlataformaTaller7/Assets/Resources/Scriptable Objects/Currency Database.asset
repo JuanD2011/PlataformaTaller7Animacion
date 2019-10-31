@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb91790ffa7d1542882d6435cfb7a07, type: 3}
   m_Name: Currency Database
   m_EditorClassIdentifier: 
-  seeds: 100
+  seeds: 2

@@ -83,34 +83,34 @@ public class QuestionsDatabase : ScriptableObject
 
         #region Association
         //1
-        Questions.Add(new Association(0));
+        Questions.Add(new Association("", "", 0));
 
         //2
-        Questions.Add(new Association(1));
+        Questions.Add(new Association("", "", 1));
 
         //3
-        Questions.Add(new Association(2));
+        Questions.Add(new Association("", "", 2));
 
         //4
-        Questions.Add(new Association(3));
+        Questions.Add(new Association("", "", 3));
 
         //5
-        Questions.Add(new Association(4));
+        Questions.Add(new Association("", "", 4));
 
         //6
-        Questions.Add(new Association(5));
+        Questions.Add(new Association("", "", 5));
 
         //7
-        Questions.Add(new Association(6));
+        Questions.Add(new Association("", "", 6));
 
         //8
-        Questions.Add(new Association(7));
+        Questions.Add(new Association("", "", 7));
 
         //9
-        Questions.Add(new Association(8));
+        Questions.Add(new Association("", "", 8));
 
         //10
-        Questions.Add(new Association(9));
+        Questions.Add(new Association("", "", 9));
         #endregion
     }
 

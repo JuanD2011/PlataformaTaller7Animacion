@@ -7,6 +7,8 @@ public class UIQuestion : MonoBehaviour
 
     [SerializeField] private SettingsTabManager headerSettings = null;
 
+    [SerializeField] private TextMeshProUGUI leftColumn = null, rightColumn = null;
+
     [SerializeField] private TextMeshProUGUI questionDescription = null;
     [SerializeField] private Animator correctAnswer = null, wrongAnswer = null;
 
@@ -56,6 +58,9 @@ public class UIQuestion : MonoBehaviour
         else
         {
             association = _Question as Association;
+
+            leftColumn.text = association.leftColumn;
+            rightColumn.text = association.rightColumn;
 
             headerSettings.PanelAnim(1);
             settingsTabManager.PanelAnim(2);

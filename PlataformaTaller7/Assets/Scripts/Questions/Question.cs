@@ -40,13 +40,19 @@ public class Association : Question
 
     private string firstKey = "", secondKey = "", thirdKey = "";
 
+    public string leftColumn = "", rightColumn = "";
+
     public System.Collections.Generic.Dictionary<int, string> idToKey = new System.Collections.Generic.Dictionary<int, string>();
     public System.Collections.Generic.Dictionary<string, string> keyToAnswer = new System.Collections.Generic.Dictionary<string, string>();
 
-    public Association(byte _Id) : base(string.Empty)
+    public Association(string _LeftColumn, string _RightColumn, byte _Id) : base(string.Empty)
     {
         questionType = QuestionType.Association;
+
         id = _Id;
+
+        leftColumn = _LeftColumn;
+        rightColumn = _RightColumn;
 
         GenerateDictionary();
     }
