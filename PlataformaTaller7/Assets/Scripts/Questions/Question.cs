@@ -38,15 +38,13 @@ public class Association : Question
 {
     public AssociationType associationType = AssociationType.None;
 
-    public string leftColumn = "", rightColumn = "";
+    private string firstKey = "", secondKey = "", thirdKey = "";
 
-    public System.Collections.Generic.Dictionary<int, string> idToWord = new System.Collections.Generic.Dictionary<int, string>();
+    public System.Collections.Generic.Dictionary<int, string> idToKey = new System.Collections.Generic.Dictionary<int, string>();
+    public System.Collections.Generic.Dictionary<string, string> keyToAnswer = new System.Collections.Generic.Dictionary<string, string>();
 
-    public Association(string _LeftColumn, string _RightColumn, AssociationType _AssociationType) : base("")
+    public Association(AssociationType _AssociationType) : base(string.Empty)
     {
-        leftColumn = _LeftColumn;
-        rightColumn = _RightColumn;
-
         questionType = QuestionType.Association;
         associationType = _AssociationType;
 
@@ -55,15 +53,43 @@ public class Association : Question
 
     private void GenerateDictionary()
     {
-        idToWord.Clear();
+        idToKey.Clear();
+        keyToAnswer.Clear();
 
         switch (associationType)
         {
-            case AssociationType.Animals:
-                idToWord.Add(0, "Jirafa");
-                idToWord.Add(1, "Caimán");
-                idToWord.Add(2, "Pájaro");
-                idToWord.Add(3, "Elefante");
+            case AssociationType.CommunityInteractions:
+                firstKey = "Mutualismo"; secondKey = "Competencia"; thirdKey = "Ciclo biogeoquímico";
+
+                idToKey.Add(0, firstKey);
+                idToKey.Add(1, secondKey);
+                idToKey.Add(2, thirdKey);
+
+                keyToAnswer.Add(firstKey, "Ambas partes se benefician de la interacción");
+                keyToAnswer.Add(secondKey, "Se afecta la tasa de crecimiento o reproducción del otro");
+                keyToAnswer.Add(thirdKey, "Los ecosistemas se ven influenciados por los movimientos de los nutrientes");
+                break;
+            case AssociationType.Biome:
+                firstKey = "Mutualismo"; secondKey = "Competencia"; thirdKey = "Ciclo biogeoquímico";
+
+                idToKey.Add(0, firstKey);
+                idToKey.Add(1, secondKey);
+                idToKey.Add(2, thirdKey);
+
+                keyToAnswer.Add(firstKey, "Ambas partes se benefician de la interacción");
+                keyToAnswer.Add(secondKey, "Se afecta la tasa de crecimiento o reproducción del otro");
+                keyToAnswer.Add(thirdKey, "Los ecosistemas se ven influenciados por los movimientos de los nutrientes");
+                break;
+            case AssociationType.Ecosystem:
+                firstKey = "Mutualismo"; secondKey = "Competencia"; thirdKey = "Ciclo biogeoquímico";
+
+                idToKey.Add(0, firstKey);
+                idToKey.Add(1, secondKey);
+                idToKey.Add(2, thirdKey);
+
+                keyToAnswer.Add(firstKey, "Ambas partes se benefician de la interacción");
+                keyToAnswer.Add(secondKey, "Se afecta la tasa de crecimiento o reproducción del otro");
+                keyToAnswer.Add(thirdKey, "Los ecosistemas se ven influenciados por los movimientos de los nutrientes");
                 break;
             case AssociationType.None:
                 break;

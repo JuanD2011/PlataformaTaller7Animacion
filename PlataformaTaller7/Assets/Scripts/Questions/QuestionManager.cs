@@ -60,7 +60,7 @@ public class QuestionManager : MonoBehaviour
                 OnAssociationConnected(QuestionAnsweredType.Correct, firstUIAssociationOption, secondUIAssociationOption);
                 couplesReached += 1;
 
-                if (couplesReached == 4)
+                if (couplesReached == 3)
                 {
                     OnAssociationComplete();
                     OnQuestionAnswered(QuestionAnsweredType.Correct);
@@ -125,13 +125,5 @@ public class QuestionManager : MonoBehaviour
         {
             OnQuestionAnswered(QuestionAnsweredType.Wrong);
         }
-    }
-
-    /// <summary>
-    /// If it is the first time, save the id and compare it with the second touch
-    /// </summary>
-    public void VerifyAssociationCouple()
-    {
-        //TODO
     }
 }

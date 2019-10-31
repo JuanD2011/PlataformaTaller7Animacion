@@ -7,7 +7,7 @@ public class UIAssociationOptionsManager : MonoBehaviour
 
     private List<UIAssociationOption> associationOptions = new List<UIAssociationOption>();
 
-    private List<int> optionsIds = new List<int>() { 0, 1, 2, 3 };
+    private List<int> optionsIds = new List<int>() { 0, 1, 2 };
 
     UIAssociationOption currentUIAssociationOption = null;
 
@@ -86,7 +86,14 @@ public class UIAssociationOptionsManager : MonoBehaviour
         {
             random = Random.Range(0, optionsIds.Count);
 
-            associationOptions[count].Initialize(optionsIds[random], association.idToWord[optionsIds[random]]);
+            if (associationOptionType == AssociationOptionType.Option)
+            {
+                associationOptions[count].Initialize(optionsIds[random], association.idToKey[optionsIds[random]]);
+            }
+            else
+            {
+                associationOptions[count].Initialize(optionsIds[random], association.keyToAnswer[association.idToKey[optionsIds[random]]]);
+            }
             count++;
 
             optionsIds.RemoveAt(random);

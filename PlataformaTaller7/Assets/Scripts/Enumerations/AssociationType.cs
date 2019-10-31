@@ -1,6 +1,8 @@
 ﻿public enum AssociationType
 {
-    Animals,
+    CommunityInteractions,
+    Ecosystem,
+    Biome,
     None
 };
 
