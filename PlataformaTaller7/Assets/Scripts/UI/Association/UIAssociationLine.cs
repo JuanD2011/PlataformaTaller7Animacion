@@ -4,9 +4,8 @@ using System.Collections;
 
 public class UIAssociationLine : MonoBehaviour
 {
-    private Image line = null;
-    private RectTransform lineTransform = null;
     private float targetHeight = 0f;
+    private RectTransform rect = null;
 
     [SerializeField]
     private float timeToLerp = 2f;
@@ -15,27 +14,23 @@ public class UIAssociationLine : MonoBehaviour
 
     private void Awake()
     {
-        line = GetComponentInChildren<Image>();
-        lineTransform = line.GetComponent<RectTransform>();
+        rect = GetComponent<RectTransform>();
     }
 
     private void Start()
     {
         QuestionManager.OnAssociationComplete += () => IsPlaced = false;
-
-        lineTransform.sizeDelta = new Vector2(20f, 0f);
+        rect.sizeDelta = new Vector2(5f, 0f);
     }
 
     public void SetPosition(Vector3 _FirstPoint, Vector3 _SecondPoint)
     {
-        line.enabled = true;
-        transform.localPosition = _FirstPoint;
-        lineTransform.rotation = Quaternion.LookRotation(_SecondPoint - _FirstPoint, line.transform.forward);
-        targetHeight = Mathf.Sqrt((_SecondPoint - _FirstPoint).sqrMagnitude);
+        rect.position = _FirstPoint;
+        Debug.DrawLine(rect.position, _SecondPoint, Color.red, 5f);
+        rect.up = _SecondPoint - rect.position;
+        targetHeight = Mathf.Sqrt((_SecondPoint - _FirstPoint).sqrMagnitude) * 1.6f;
 
         StartCoroutine(LerpLine());
-
-        //Debug.Log("SetPosition");
     }
 
     private IEnumerator LerpLine()
@@ -43,18 +38,20 @@ public class UIAssociationLine : MonoBehaviour
         IsPlaced = true;
         float elapsedTime = 0f;
         Vector2 targetDelta = new Vector2();
-        Vector2 targetPosition = new Vector2();
 
-        //Debug.Log("Lerpin'");
 
         while (elapsedTime < timeToLerp)
         {
-            targetDelta = new Vector2(lineTransform.sizeDelta.x, Mathf.Lerp(lineTransform.sizeDelta.y, targetHeight, elapsedTime / timeToLerp));
-            lineTransform.sizeDelta = targetDelta;
-            targetPosition = new Vector2(lineTransform.position.x, Mathf.Lerp(lineTransform.position.y, targetHeight / 2, elapsedTime / timeToLerp));
-            lineTransform.position = targetPosition;
+            targetDelta = new Vector2(rect.sizeDelta.x, Mathf.Lerp(rect.sizeDelta.y, targetHeight, elapsedTime / timeToLerp));
+            rect.sizeDelta = targetDelta;
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+    }
+
+    private void ResetLine()
+    {
+        IsPlaced = false;
+        rect.sizeDelta = new Vector2(5f, 0f);
     }
 }
