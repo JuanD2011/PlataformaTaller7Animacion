@@ -18,7 +18,7 @@ public class MenuGameManager : MonoBehaviour
     private void Start()
     {
         LadderManager.Manager.Character.OnReachDestination += ActiveQuestionPanel;
-        //Receive win condition
+        //TODO Receive win condition
     }
 
     private void ActiveQuestionPanel(BoxType _boxType)
