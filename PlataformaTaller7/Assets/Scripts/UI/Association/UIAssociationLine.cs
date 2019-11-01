@@ -35,6 +35,7 @@ public class UIAssociationLine : MonoBehaviour
 
     private IEnumerator LerpLine()
     {
+        IsPlaced = true;
         float elapsedTime = 0f;
         Vector2 targetDelta = new Vector2();
         Vector2 targetPosition = new Vector2();
