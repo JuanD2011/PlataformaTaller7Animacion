@@ -9,6 +9,8 @@ public class UIAssociationOptionsManager : MonoBehaviour
 
     private List<int> optionsIds = new List<int>() { 0, 1, 2 };
 
+    private List<int> copyOptionsIds = null;
+
     UIAssociationOption currentUIAssociationOption = null;
 
     private bool isWrong = false;
@@ -77,26 +79,28 @@ public class UIAssociationOptionsManager : MonoBehaviour
     {
         if (_Question.questionType != QuestionType.Association) return;
 
+        copyOptionsIds = new List<int>(optionsIds);
+
         Association association = _Question as Association;
 
         int random = 0;
         int count = 0;
 
-        while (optionsIds.Count > 0)
+        while (copyOptionsIds.Count > 0)
         {
-            random = Random.Range(0, optionsIds.Count);
+            random = Random.Range(0, copyOptionsIds.Count);
 
             if (associationOptionType == AssociationOptionType.Option)
             {
-                associationOptions[count].Initialize(optionsIds[random], association.idToKey[optionsIds[random]]);
+                associationOptions[count].Initialize(copyOptionsIds[random], association.idToKey[copyOptionsIds[random]]);
             }
             else
             {
-                associationOptions[count].Initialize(optionsIds[random], association.keyToAnswer[association.idToKey[optionsIds[random]]]);
+                associationOptions[count].Initialize(copyOptionsIds[random], association.keyToAnswer[association.idToKey[copyOptionsIds[random]]]);
             }
             count++;
 
-            optionsIds.RemoveAt(random);
+            copyOptionsIds.RemoveAt(random);
         }
     }
 }

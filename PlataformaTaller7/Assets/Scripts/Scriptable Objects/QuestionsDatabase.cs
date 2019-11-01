@@ -6,7 +6,7 @@ public class QuestionsDatabase : ScriptableObject
 {
     public List<Question> Questions { get; private set; } = null;
 
-    public Question LastQuestion { get; private set; } = null;
+    public Queue<Question> LastQuestions { get; private set; } = new Queue<Question>();
 
     /// <summary>
     /// Initialize all the questions
@@ -120,6 +120,14 @@ public class QuestionsDatabase : ScriptableObject
     /// <param name="_Question"></param>
     public void SetLastQuestion(Question _Question)
     {
-        LastQuestion = _Question;
+        if (LastQuestions.Count < 3)
+        {
+            LastQuestions.Enqueue(_Question);
+        }
+        else
+        {
+            LastQuestions.Dequeue();
+            LastQuestions.Enqueue(_Question);
+        }
     }
 }

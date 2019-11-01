@@ -84,7 +84,7 @@ public class QuestionManager : MonoBehaviour
             randomQuestion = Random.Range(0, questionsDataBase.Questions.Count);
             question = questionsDataBase.Questions[randomQuestion];
         }
-        while (question == questionsDataBase.LastQuestion);
+        while (questionsDataBase.LastQuestions.Contains(question));
 
         questionsDataBase.SetLastQuestion(question);
 

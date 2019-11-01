@@ -154,7 +154,7 @@ public class Association : Question
                 break;
             case 8:
                 //TODO change the third option
-                firstKey = "Natural"; secondKey = "Causada por el hombre"; thirdKey = "Por minería";
+                firstKey = "Natural"; secondKey = "Causada por el hombre"; thirdKey = "Changeeee Meee";
 
                 idToKey.Add(0, firstKey);
                 idToKey.Add(1, secondKey);
@@ -162,7 +162,7 @@ public class Association : Question
 
                 keyToAnswer.Add(firstKey, "Causada por tornados, fenómenos naturales, incendios");
                 keyToAnswer.Add(secondKey, "Para fines como la elaboración de madera, papel, construcciones, etc");
-                keyToAnswer.Add(thirdKey, "Afecta a la degradación de los suelos y a las poblaciones de la zona");
+                keyToAnswer.Add(thirdKey, "Changeeee Meee");
                 break;
             case 9:
                 firstKey = "Pérdida de biodiversidad"; secondKey = "Degradación del hábitat"; thirdKey = "Alteración del clima global.";

@@ -35,7 +35,7 @@ public class UIAssociationLine : MonoBehaviour
 
         StartCoroutine(LerpLine());
 
-        Debug.Log("SetPosition");
+        //Debug.Log("SetPosition");
     }
 
     private IEnumerator LerpLine()
@@ -45,7 +45,7 @@ public class UIAssociationLine : MonoBehaviour
         Vector2 targetDelta = new Vector2();
         Vector2 targetPosition = new Vector2();
 
-        Debug.Log("Lerpin'");
+        //Debug.Log("Lerpin'");
 
         while (elapsedTime < timeToLerp)
         {
