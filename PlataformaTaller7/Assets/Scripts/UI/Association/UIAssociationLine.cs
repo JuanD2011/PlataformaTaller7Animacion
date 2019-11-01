@@ -22,15 +22,20 @@ public class UIAssociationLine : MonoBehaviour
     private void Start()
     {
         QuestionManager.OnAssociationComplete += () => IsPlaced = false;
+
+        lineTransform.sizeDelta = new Vector2(20f, 0f);
     }
 
     public void SetPosition(Vector3 _FirstPoint, Vector3 _SecondPoint)
     {
-        transform.position = _FirstPoint;
+        line.enabled = true;
+        transform.localPosition = _FirstPoint;
         lineTransform.rotation = Quaternion.LookRotation(_SecondPoint - _FirstPoint, line.transform.forward);
-        targetHeight = (_SecondPoint - _FirstPoint).sqrMagnitude;
+        targetHeight = Mathf.Sqrt((_SecondPoint - _FirstPoint).sqrMagnitude);
 
         StartCoroutine(LerpLine());
+
+        Debug.Log("SetPosition");
     }
 
     private IEnumerator LerpLine()
@@ -39,6 +44,8 @@ public class UIAssociationLine : MonoBehaviour
         float elapsedTime = 0f;
         Vector2 targetDelta = new Vector2();
         Vector2 targetPosition = new Vector2();
+
+        Debug.Log("Lerpin'");
 
         while (elapsedTime < timeToLerp)
         {

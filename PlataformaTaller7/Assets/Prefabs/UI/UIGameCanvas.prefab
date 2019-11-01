@@ -1975,7 +1975,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 20, y: 100}
+  m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1496744230231462945
 CanvasRenderer:
@@ -5596,7 +5596,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 20, y: 100}
+  m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1496744231477161093
 CanvasRenderer:
@@ -6767,7 +6767,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 20, y: 100}
+  m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1496744231927771787
 CanvasRenderer:
@@ -8683,8 +8683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headerSettings: {fileID: 9140635245135703501}
-  leftColumn: {fileID: 0}
-  rightColumn: {fileID: 0}
+  leftColumn: {fileID: 820906357}
+  rightColumn: {fileID: 954227748}
   questionDescription: {fileID: 7850394012136007880}
   correctAnswer: {fileID: 8804758782271785368}
   wrongAnswer: {fileID: 8804758781463442013}
@@ -12753,11 +12753,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1496744230847810178}
     m_Modifications:
-    - target: {fileID: 4597070975065917991, guid: eecff55fed7433149aeee4041b4dc673,
-        type: 3}
-      propertyPath: m_Name
-      value: Key Button
-      objectReference: {fileID: 0}
     - target: {fileID: 4597070975065917990, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12863,6 +12858,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4597070975065917991, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_Name
+      value: Key Button
+      objectReference: {fileID: 0}
     - target: {fileID: 7088002452815327468, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -12956,11 +12956,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3861122859683911276}
     m_Modifications:
-    - target: {fileID: 829304608032024260, guid: 58a66fbd4b4251146a2c541589a2de69,
-        type: 3}
-      propertyPath: m_Name
-      value: Chest
-      objectReference: {fileID: 0}
     - target: {fileID: 829304608032024263, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13066,6 +13061,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 829304608032024260, guid: 58a66fbd4b4251146a2c541589a2de69,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest
+      objectReference: {fileID: 0}
     - target: {fileID: 3889071864445628570, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
       propertyPath: chestsAnimator
@@ -13091,11 +13091,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4637889891876334923}
     m_Modifications:
-    - target: {fileID: 4597070975065917991, guid: eecff55fed7433149aeee4041b4dc673,
-        type: 3}
-      propertyPath: m_Name
-      value: Exit
-      objectReference: {fileID: 0}
     - target: {fileID: 4597070975065917990, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13200,6 +13195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597070975065917991, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_Name
+      value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 2210130307561828560, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
@@ -13312,11 +13312,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1496744231686097275}
     m_Modifications:
-    - target: {fileID: 4597070975065917991, guid: eecff55fed7433149aeee4041b4dc673,
-        type: 3}
-      propertyPath: m_Name
-      value: Key Button
-      objectReference: {fileID: 0}
     - target: {fileID: 4597070975065917990, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13422,6 +13417,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4597070975065917991, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_Name
+      value: Key Button
+      objectReference: {fileID: 0}
     - target: {fileID: 2210130307561828560, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -13525,11 +13525,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3861122859683911276}
     m_Modifications:
-    - target: {fileID: 829304608032024260, guid: 58a66fbd4b4251146a2c541589a2de69,
-        type: 3}
-      propertyPath: m_Name
-      value: Chest (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 829304608032024263, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13635,6 +13630,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 829304608032024260, guid: 58a66fbd4b4251146a2c541589a2de69,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3889071864445628570, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
       propertyPath: chestsAnimator
@@ -13660,11 +13660,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3861122859683911276}
     m_Modifications:
-    - target: {fileID: 829304608032024260, guid: 58a66fbd4b4251146a2c541589a2de69,
-        type: 3}
-      propertyPath: m_Name
-      value: Chest (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 829304608032024263, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13769,6 +13764,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 829304608032024260, guid: 58a66fbd4b4251146a2c541589a2de69,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3889071864445628570, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
@@ -14161,11 +14161,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4637889891876334923}
     m_Modifications:
-    - target: {fileID: 4597070975065917991, guid: eecff55fed7433149aeee4041b4dc673,
-        type: 3}
-      propertyPath: m_Name
-      value: Back
-      objectReference: {fileID: 0}
     - target: {fileID: 4597070975065917990, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14271,6 +14266,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4597070975065917991, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_Name
+      value: Back
+      objectReference: {fileID: 0}
     - target: {fileID: 2210130307561828560, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -14371,11 +14371,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Popup Window Out
       objectReference: {fileID: 0}
-    - target: {fileID: 7088002452815327457, guid: eecff55fed7433149aeee4041b4dc673,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6358813133577750631, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
       propertyPath: m_RaycastTarget
@@ -14387,6 +14382,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 46744e9db3dd88e4982de2ae6dcfadbe,
         type: 3}
+    - target: {fileID: 7088002452815327457, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eecff55fed7433149aeee4041b4dc673, type: 3}
 --- !u!224 &421361826873748193 stripped
