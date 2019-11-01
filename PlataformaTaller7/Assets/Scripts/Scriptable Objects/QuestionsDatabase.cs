@@ -120,7 +120,7 @@ public class QuestionsDatabase : ScriptableObject
     /// <param name="_Question"></param>
     public void SetLastQuestion(Question _Question)
     {
-        if (LastQuestions.Count < 3)
+        if (LastQuestions.Count < 5)
         {
             LastQuestions.Enqueue(_Question);
         }
