@@ -82,7 +82,7 @@ public class Association : Question
                 idToKey.Add(1, secondKey);
                 idToKey.Add(2, thirdKey);
 
-                keyToAnswer.Add(firstKey, "Jaguar, tigre");
+                keyToAnswer.Add(firstKey, "Orangután, Jaguar, Tigre");
                 keyToAnswer.Add(secondKey, "Zorro polar, Oso gris, Oso polar");
                 keyToAnswer.Add(thirdKey, "Cabra, Venado, Águila real");
                 break;
@@ -126,9 +126,9 @@ public class Association : Question
                 idToKey.Add(1, secondKey);
                 idToKey.Add(2, thirdKey);
 
-                keyToAnswer.Add(firstKey, "Papel y cartón");
-                keyToAnswer.Add(secondKey, "Vidrio");
-                keyToAnswer.Add(thirdKey, "Desechos orgánicos");
+                keyToAnswer.Add(firstKey, "Plástico");
+                keyToAnswer.Add(secondKey, "Ordinarios no reciclables");
+                keyToAnswer.Add(thirdKey, "Papel y cartón");
                 break;
             case 6:
                 firstKey = "Deforestación"; secondKey = "Trata de animales"; thirdKey = "Contaminación";
@@ -153,16 +153,15 @@ public class Association : Question
                 keyToAnswer.Add(thirdKey, "Afecta a la degradación de los suelos y a las poblaciones de la zona");
                 break;
             case 8:
-                //TODO change the third option
-                firstKey = "Natural"; secondKey = "Causada por el hombre"; thirdKey = "Changeeee Meee";
+                firstKey = "Manglares"; secondKey = "Sabanas"; thirdKey = "Humedales";
 
                 idToKey.Add(0, firstKey);
                 idToKey.Add(1, secondKey);
                 idToKey.Add(2, thirdKey);
 
-                keyToAnswer.Add(firstKey, "Causada por tornados, fenómenos naturales, incendios");
-                keyToAnswer.Add(secondKey, "Para fines como la elaboración de madera, papel, construcciones, etc");
-                keyToAnswer.Add(thirdKey, "Changeeee Meee");
+                keyToAnswer.Add(firstKey, "Ecosistemas  que mezclan de aguas marinas y aguas continentales");
+                keyToAnswer.Add(secondKey, "Reúne ecosistemas como humedales y páramos con predominio de especies arbóreas");
+                keyToAnswer.Add(thirdKey, "Áreas muy húmedas, semihúmedas y secas con fauna y flora con pantanos cubiertos de agua");
                 break;
             case 9:
                 firstKey = "Pérdida de biodiversidad"; secondKey = "Degradación del hábitat"; thirdKey = "Alteración del clima global.";

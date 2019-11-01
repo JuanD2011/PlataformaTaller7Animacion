@@ -83,34 +83,34 @@ public class QuestionsDatabase : ScriptableObject
 
         #region Association
         //1
-        Questions.Add(new Association("", "", 0));
+        Questions.Add(new Association("Interacción", "Ejemplo", 0));
 
         //2
-        Questions.Add(new Association("", "", 1));
+        Questions.Add(new Association("Hábitat", "Animal", 1));
 
         //3
-        Questions.Add(new Association("", "", 2));
+        Questions.Add(new Association("Ecosistema", "Descripción", 2));
 
         //4
-        Questions.Add(new Association("", "", 3));
+        Questions.Add(new Association("Animal", "Ecosistema", 3));
 
         //5
-        Questions.Add(new Association("", "", 4));
+        Questions.Add(new Association("Animal", "Nicho ecológico", 4));
 
         //6
-        Questions.Add(new Association("", "", 5));
+        Questions.Add(new Association("Color de bote de basura", "Clasificación", 5));
 
         //7
-        Questions.Add(new Association("", "", 6));
+        Questions.Add(new Association("Acciones", "Consecuencias", 6));
 
         //8
-        Questions.Add(new Association("", "", 7));
+        Questions.Add(new Association("Tipos de deforestación", "Definición", 7));
 
         //9
-        Questions.Add(new Association("", "", 8));
+        Questions.Add(new Association("Ecosistemas colombianos", "Definición", 8));
 
         //10
-        Questions.Add(new Association("", "", 9));
+        Questions.Add(new Association("Impacto de la deforestación", "Consecuencia", 9));
         #endregion
     }
 
