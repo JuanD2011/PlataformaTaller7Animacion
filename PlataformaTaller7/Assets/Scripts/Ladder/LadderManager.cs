@@ -17,6 +17,8 @@ public class LadderManager : MonoBehaviour
     public Board Board { get => board; private set => board = value; }
     public Character Character { get => character; private set => character = value; }
 
+    public event Delegates.Action OnGameOver = null;
+
     private void Awake()
     {
         if (Manager == null) Manager = this;
@@ -35,6 +37,7 @@ public class LadderManager : MonoBehaviour
         if (Character.CurrentBox == board.Boxes.Length - 1)
         {
             Debug.Log("Game Over");
+            OnGameOver?.Invoke();
         }
         else dice.SetCanThrow(true);
     }
