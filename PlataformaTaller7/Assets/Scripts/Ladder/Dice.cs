@@ -3,11 +3,13 @@ using System.Collections;
 using Delegates;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class Dice : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
     private Image m_Image;
     private Sprite[] diceSprites;
+    private GameObject text = null;
     private bool canThrow = false;
 
     private int currentNumber = 0;
@@ -17,6 +19,7 @@ public class Dice : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     private void Awake()
     {
         m_Image = GetComponent<Image>();
+        text = transform.GetChild(0).gameObject;
         diceSprites = Resources.LoadAll<Sprite>("Dice Sprites/");
         m_Image.sprite = diceSprites[5];
     }
@@ -44,5 +47,9 @@ public class Dice : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         OnDiceResult?.Invoke(currentNumber);
     }
 
-    public void SetCanThrow(bool _value) => canThrow = _value;
+    public void SetCanThrow(bool _value)
+    {
+        canThrow = _value;
+        text.SetActive(_value);
+    }
 }

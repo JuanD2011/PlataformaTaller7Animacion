@@ -18,12 +18,13 @@ public class UIAssociationLine : MonoBehaviour
 
     private void Start()
     {
-        QuestionManager.OnAssociationComplete += () => IsPlaced = false;
+        QuestionManager.OnAssociationComplete += ResetLine;
         rect.sizeDelta = new Vector2(5f, 0f);
     }
 
     public void SetPosition(Vector3 _FirstPoint, Vector3 _SecondPoint)
     {
+        ResetLine();
         rect.position = _FirstPoint;
         Debug.DrawLine(rect.position, _SecondPoint, Color.red, 5f);
         rect.up = _SecondPoint - rect.position;
@@ -48,9 +49,10 @@ public class UIAssociationLine : MonoBehaviour
         }
     }
 
-    private void ResetLine()
+    public void ResetLine()
     {
         IsPlaced = false;
         rect.sizeDelta = new Vector2(5f, 0f);
+        Debug.Log("Line reset");
     }
 }

@@ -44,14 +44,14 @@ public class QuestionManager : MonoBehaviour
             firstUIAssociationOption = _UIAssociationOption;
 
             if (firstUIAssociationOption.AssociationOptionType == AssociationOptionType.Option) optionSet = true;
-            if (firstUIAssociationOption.AssociationOptionType == AssociationOptionType.Answer) answerSet = true;
+            else answerSet = true;
         }
         else if (_UIAssociationOption.AssociationOptionType != firstUIAssociationOption.AssociationOptionType)
         {
             secondUIAssociationOption = _UIAssociationOption;
 
             if (secondUIAssociationOption.AssociationOptionType == AssociationOptionType.Option) optionSet = true;
-            if (secondUIAssociationOption.AssociationOptionType == AssociationOptionType.Answer) answerSet = true;
+            else answerSet = true;
         }
 
         if (optionSet && answerSet)
@@ -78,6 +78,8 @@ public class QuestionManager : MonoBehaviour
 
             optionSet = false;
             answerSet = false;
+            firstUIAssociationOption = null;
+            secondUIAssociationOption = null;
         }
     }
 
