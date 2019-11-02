@@ -4,7 +4,8 @@
 public class UserProperty
 {
     public bool male = true;
-    public Color skinColor = new Color(0.8f, 0.58f, 0.5f), hairColor = Color.black;
+    public Color skinColor = new Color(0.8f, 0.58f, 0.5f), hairColor = new Color(0.0627f, 0.0627f, 0.0627f);
+
 
     public int hairstyle = 0, outfit = 0, accessory = 0;
 
@@ -45,6 +46,15 @@ public class UserProperty
     public void SetAccessory(int _accessoryId)
     {
         accessory = _accessoryId;
+        OnCharacterUpdate();
+    }
+    internal void Restore()
+    {
+        skinColor = new Color(0.8f, 0.58f, 0.5f);
+        hairColor = new Color(0.0627f, 0.0627f, 0.0627f);
+        hairstyle = 0;
+        outfit = 0;
+        accessory = 0;
         OnCharacterUpdate();
     }
 }
