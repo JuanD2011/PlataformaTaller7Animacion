@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UIAssociationManager : MonoBehaviour
 {
@@ -18,15 +17,6 @@ public class UIAssociationManager : MonoBehaviour
     private void Start()
     {
         QuestionManager.OnAssociationConnected += QuestionManager_OnAssociationConnected;
-        QuestionManager.OnAssociationComplete += ResetLines;
-    }
-
-    private void ResetLines()
-    {
-        foreach (UIAssociationLine item in uIAssociationLines)
-        {
-            item.ResetLine();
-        }
     }
 
     private void QuestionManager_OnAssociationConnected(QuestionAnsweredType _QuestionAnsweredType, UIAssociationOption _FirstUIAssociationOption, UIAssociationOption _SecondUIAssociationOption)

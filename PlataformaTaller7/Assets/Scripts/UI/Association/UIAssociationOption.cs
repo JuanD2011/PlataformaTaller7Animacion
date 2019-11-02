@@ -29,7 +29,7 @@ public class UIAssociationOption : MonoBehaviour
         m_Text = GetComponentInChildren<TextMeshProUGUI>();
         m_Button = GetComponentInChildren<Button>();
         m_Animator = GetComponent<Animator>();
-        Reference = transform.GetChild(1);
+        Reference = transform.GetChild(2);
     }
 
     private void Start()

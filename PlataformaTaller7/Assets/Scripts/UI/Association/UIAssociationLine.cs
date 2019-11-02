@@ -53,6 +53,8 @@ public class UIAssociationLine : MonoBehaviour
     {
         IsPlaced = false;
         rect.sizeDelta = new Vector2(5f, 0f);
-        Debug.Log("Line reset");
+        targetHeight = 0;
+        Debug.Log(IsPlaced);
+        Debug.Log(rect.sizeDelta);
     }
 }

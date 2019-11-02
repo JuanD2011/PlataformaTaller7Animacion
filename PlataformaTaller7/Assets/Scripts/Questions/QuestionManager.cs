@@ -53,6 +53,12 @@ public class QuestionManager : MonoBehaviour
             if (secondUIAssociationOption.AssociationOptionType == AssociationOptionType.Option) optionSet = true;
             else answerSet = true;
         }
+        else
+        {
+            firstUIAssociationOption = _UIAssociationOption;
+            if (firstUIAssociationOption.AssociationOptionType == AssociationOptionType.Option) optionSet = true;
+            else answerSet = true;
+        }
 
         if (optionSet && answerSet)
         {
