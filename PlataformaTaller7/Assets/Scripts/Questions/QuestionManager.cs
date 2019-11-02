@@ -39,15 +39,19 @@ public class QuestionManager : MonoBehaviour
 
     private void CheckCoupleAssociation(UIAssociationOption _UIAssociationOption)
     {
-        if (_UIAssociationOption.AssociationOptionType == AssociationOptionType.Option)
+        if (firstUIAssociationOption == null)
         {
             firstUIAssociationOption = _UIAssociationOption;
-            optionSet = true;
+
+            if (firstUIAssociationOption.AssociationOptionType == AssociationOptionType.Option) optionSet = true;
+            if (firstUIAssociationOption.AssociationOptionType == AssociationOptionType.Answer) answerSet = true;
         }
-        else if (_UIAssociationOption.AssociationOptionType == AssociationOptionType.Answer)
+        else if (_UIAssociationOption.AssociationOptionType != firstUIAssociationOption.AssociationOptionType)
         {
             secondUIAssociationOption = _UIAssociationOption;
-            answerSet = true;
+
+            if (secondUIAssociationOption.AssociationOptionType == AssociationOptionType.Option) optionSet = true;
+            if (secondUIAssociationOption.AssociationOptionType == AssociationOptionType.Answer) answerSet = true;
         }
 
         if (optionSet && answerSet)
