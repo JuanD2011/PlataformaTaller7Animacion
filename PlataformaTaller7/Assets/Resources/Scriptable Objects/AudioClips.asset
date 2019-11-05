@@ -16,8 +16,12 @@ MonoBehaviour:
   ladder: {fileID: 8300000, guid: f615b8bbe98998443b35ddec1c59363b, type: 3}
   minigame: {fileID: 8300000, guid: 726fb506081e4dd429cea8ec86f3dbd5, type: 3}
   defaultButton: {fileID: 8300000, guid: 2cfef20686c8e914a9e5e92ca3082f9b, type: 3}
-  acceptButton: {fileID: 0}
-  cancelButton: {fileID: 0}
-  notificationAlert: {fileID: 0}
+  acceptButton: {fileID: 8300000, guid: f687af446f6a257439ab9abf387a9ac4, type: 3}
+  cancelButton: {fileID: 8300000, guid: 240f5d2cf20647c48ab3ccd2cee26076, type: 3}
+  dice: {fileID: 8300000, guid: 60df67d54f715df40aec1136d05e865e, type: 3}
   victory: {fileID: 8300000, guid: d098a533e6a5cbc4bbb59e2977ed41e1, type: 3}
   lose: {fileID: 8300000, guid: e823d0ffa7a4d39449806ccb99ed13bc, type: 3}
+  chest: {fileID: 8300000, guid: bfadb15657e16ed4a9c97b9b5049da4a, type: 3}
+  correct: {fileID: 8300000, guid: cd2ff00c287860b418b730cc077dc59e, type: 3}
+  wrong: {fileID: 8300000, guid: 702ea0a00783e57459ed4506825a45b8, type: 3}
+  movement: {fileID: 8300000, guid: da3329400f8c0804ca12d308bb424ea1, type: 3}

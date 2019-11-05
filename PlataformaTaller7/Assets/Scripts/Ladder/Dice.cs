@@ -34,6 +34,7 @@ public class Dice : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     private IEnumerator Throw()
     {
         SetCanThrow(false);
+        AudioManager.instance.PlaySFx(AudioManager.instance.audioClips.dice, 1f, false);
         int randomDiceSide = 0;
 
         for (int i = 0; i < 15; i++)

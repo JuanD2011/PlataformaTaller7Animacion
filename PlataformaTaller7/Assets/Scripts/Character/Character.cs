@@ -24,6 +24,7 @@ public class Character : MonoBehaviour
 
         for (int i = 0; i < numberOfBoxes; i++)
         {
+            AudioManager.instance.PlaySFx(AudioManager.instance.audioClips.movement, 1f, false);
             CurrentBox++;
 
             if (transform.position.x <= LadderManager.Manager.Board.Boxes[CurrentBox].transform.position.x)
@@ -54,6 +55,7 @@ public class Character : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             CurrentBox--;
+            AudioManager.instance.PlaySFx(AudioManager.instance.audioClips.movement, 1f, false);
 
             if (transform.position.x <= LadderManager.Manager.Board.Boxes[CurrentBox].transform.position.x)
             {

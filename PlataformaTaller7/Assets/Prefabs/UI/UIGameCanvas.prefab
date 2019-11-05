@@ -3119,7 +3119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bcee2a48aa64c047bb766080f76f32f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ButtonSoundType: 0
+  m_ButtonSoundType: 1
 --- !u!1 &3270447400745694060
 GameObject:
   m_ObjectHideFlags: 0
@@ -14576,11 +14576,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3889071864445628570, guid: 58a66fbd4b4251146a2c541589a2de69,
+    - target: {fileID: 3889071864806344099, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
-      propertyPath: chestsAnimator
-      value: 
-      objectReference: {fileID: 8309225309106738619}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3889071864445628570, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
       propertyPath: questionAnimator
@@ -14769,26 +14769,6 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2210130307561828559, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2210130307561828559, guid: eecff55fed7433149aeee4041b4dc673,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2210130307561828559, guid: eecff55fed7433149aeee4041b4dc673,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2210130307561828559, guid: eecff55fed7433149aeee4041b4dc673,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2210130307561828559, guid: eecff55fed7433149aeee4041b4dc673,
-        type: 3}
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
@@ -14801,6 +14781,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSizeBase
       value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210130307561828559, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7088002452815327458, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
@@ -14947,11 +14932,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3889071864445628570, guid: 58a66fbd4b4251146a2c541589a2de69,
+    - target: {fileID: 3889071864806344099, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
-      propertyPath: chestsAnimator
-      value: 
-      objectReference: {fileID: 8309225309106738619}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3889071864445628570, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
       propertyPath: questionAnimator
@@ -15082,11 +15067,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3889071864445628570, guid: 58a66fbd4b4251146a2c541589a2de69,
+    - target: {fileID: 3889071864806344099, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
-      propertyPath: chestsAnimator
-      value: 
-      objectReference: {fileID: 8309225309106738619}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3889071864445628570, guid: 58a66fbd4b4251146a2c541589a2de69,
         type: 3}
       propertyPath: questionAnimator
@@ -15475,11 +15460,31 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 7088002452815327459, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_ButtonSoundType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7088002452815327458, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8804758782271785368}
+    - target: {fileID: 7088002452815327458, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3704737026882780568}
+    - target: {fileID: 7088002452815327458, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: VerifyVictory
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088002452815327458, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eecff55fed7433149aeee4041b4dc673, type: 3}
 --- !u!224 &636024879089798524 stripped
@@ -16091,11 +16096,31 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 7088002452815327459, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_ButtonSoundType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7088002452815327458, guid: eecff55fed7433149aeee4041b4dc673,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8804758781463442013}
+    - target: {fileID: 7088002452815327458, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3704737026882780568}
+    - target: {fileID: 7088002452815327458, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: VerifyVictory
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088002452815327458, guid: eecff55fed7433149aeee4041b4dc673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eecff55fed7433149aeee4041b4dc673, type: 3}
 --- !u!224 &8439302941713460193 stripped

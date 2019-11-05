@@ -30,6 +30,8 @@ public class MenuGameManager : MonoBehaviour
     {
         if (!showVictoryPanel) return;
 
+        AudioManager.instance.StopByClip(AudioManager.instance.audioClips.minigame);
+        AudioManager.instance.PlaySFx(AudioManager.instance.audioClips.victory, 0.7f, false);
         settingsTabManager.ModalAnim(true);
         victoryAnimation.Play("Popup Window In");
     }

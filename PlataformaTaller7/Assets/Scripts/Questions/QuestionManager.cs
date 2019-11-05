@@ -69,6 +69,7 @@ public class QuestionManager : MonoBehaviour
 
                 OnAssociationConnected(QuestionAnsweredType.Correct, firstUIAssociationOption, secondUIAssociationOption);
                 couplesReached += 1;
+                AudioManager.instance.PlaySFx(AudioManager.instance.audioClips.correct, 1f, false);
 
                 if (couplesReached == 3)
                 {
@@ -79,6 +80,7 @@ public class QuestionManager : MonoBehaviour
             }
             else
             {
+                AudioManager.instance.PlaySFx(AudioManager.instance.audioClips.wrong, 1f, false);
                 OnAssociationConnected(QuestionAnsweredType.Wrong, firstUIAssociationOption, secondUIAssociationOption);
             }
 
@@ -114,10 +116,12 @@ public class QuestionManager : MonoBehaviour
         if (_AnswerValue == multipleChoice.correctAnswer)
         {
             OnQuestionAnswered(QuestionAnsweredType.Correct);
+            AudioManager.instance.PlaySFx(AudioManager.instance.audioClips.correct, 1f, false);
         }
         else
         {
             OnQuestionAnswered(QuestionAnsweredType.Wrong);
+            AudioManager.instance.PlaySFx(AudioManager.instance.audioClips.wrong, 1f, false);
         }
     }
 
@@ -132,10 +136,12 @@ public class QuestionManager : MonoBehaviour
         if (_AnswerValue == trueOrFalse.answer)
         {
             OnQuestionAnswered(QuestionAnsweredType.Correct);
+            AudioManager.instance.PlaySFx(AudioManager.instance.audioClips.correct, 1f, false);
         }
         else
         {
             OnQuestionAnswered(QuestionAnsweredType.Wrong);
+            AudioManager.instance.PlaySFx(AudioManager.instance.audioClips.wrong, 1f, false);
         }
     }
 }
