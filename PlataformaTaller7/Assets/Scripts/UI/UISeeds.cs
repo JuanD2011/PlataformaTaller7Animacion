@@ -1,16 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class UISeeds : MonoBehaviour
 {
-    CurrencyDatabase currencyDataBase = null;
+    [SerializeField] CurrencyDatabase currencyDatabase = null;
     TextMeshProUGUI m_Text = null;
 
     private void Awake()
     {
-        currencyDataBase = Resources.Load<CurrencyDatabase>("Scriptable Objects/Currency Database");
         m_Text = GetComponent<TextMeshProUGUI>();
 
         UpdateSeedsText();
@@ -18,11 +15,11 @@ public class UISeeds : MonoBehaviour
 
     private void Start()
     {
-        currencyDataBase.OnSeedsUpdated += UpdateSeedsText;
+        currencyDatabase.OnSeedsUpdated += UpdateSeedsText;
     }
 
     private void UpdateSeedsText()
     {
-        m_Text.text = currencyDataBase.seeds.ToString();
+        m_Text.text = currencyDatabase.seeds.ToString();
     }
 }

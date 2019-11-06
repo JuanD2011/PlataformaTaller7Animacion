@@ -8527,6 +8527,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 3.800003
       objectReference: {fileID: 0}
+    - target: {fileID: 5716298329912273614, guid: 4c35d4822e7e29c439f14f25e54c13b9,
+        type: 3}
+      propertyPath: currencyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 2fffb2f47cdc2ff4e9833db186ac4731,
+        type: 2}
+    - target: {fileID: 5391511332142203667, guid: 4c35d4822e7e29c439f14f25e54c13b9,
+        type: 3}
+      propertyPath: currencyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 2fffb2f47cdc2ff4e9833db186ac4731,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c35d4822e7e29c439f14f25e54c13b9, type: 3}
 --- !u!1001 &7688567801716107262
