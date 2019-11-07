@@ -2219,7 +2219,7 @@ PrefabInstance:
     - target: {fileID: 5988612777176190996, guid: 106fb313b250ddf43a17cadc3029f271,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.26
+      value: 0.26000214
       objectReference: {fileID: 0}
     - target: {fileID: 5988612777176190996, guid: 106fb313b250ddf43a17cadc3029f271,
         type: 3}
@@ -2981,6 +2981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988612777985256193, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5988612778026761044, guid: 106fb313b250ddf43a17cadc3029f271,
         type: 3}
