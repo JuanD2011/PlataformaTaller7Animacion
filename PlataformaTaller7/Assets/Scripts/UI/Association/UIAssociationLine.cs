@@ -28,7 +28,7 @@ public class UIAssociationLine : MonoBehaviour
         rect.position = _FirstPoint;
         Debug.DrawLine(rect.position, _SecondPoint, Color.red, 5f);
         rect.up = _SecondPoint - rect.position;
-        targetHeight = Mathf.Sqrt((_SecondPoint - _FirstPoint).sqrMagnitude) * 1.05f;
+        targetHeight = Vector2.Distance(_SecondPoint, rect.position) / 2f;
 
         StartCoroutine(LerpLine());
     }
