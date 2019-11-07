@@ -8,12 +8,14 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private UsersDatabase usersDatabase = null;
 
+    [SerializeField]
+    private CurrencyDatabase currencyDatabase = null;
+
     private void Awake()
     {
         Memento.LoadData(settings);
-#if !UNITY_EDITOR
         Memento.LoadData(usersDatabase);
-#endif
+        Memento.LoadData(currencyDatabase);
     }
 
     /// <summary>
@@ -27,12 +29,5 @@ public class MenuManager : MonoBehaviour
     public void SaveUsersDatabase()
     {
         Memento.SaveData(usersDatabase);
-    }
-
-    private void OnApplicationQuit()
-    {
-        if (settings != null) SaveSettings();
-
-        if (usersDatabase != null) SaveUsersDatabase();
     }
 }

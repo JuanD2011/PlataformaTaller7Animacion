@@ -2982,6 +2982,87 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5988612777219915806, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988612777577559828, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823904549029444744, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: currencyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 2fffb2f47cdc2ff4e9833db186ac4731,
+        type: 2}
+    - target: {fileID: 4132769642910873620, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271131420792168447, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -365.4995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988612778358969125, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988612777765771441, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 56.799805
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988612778555189109, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 238.2002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132769643054216617, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 56.800293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132769644517657197, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 238.2002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988612778497000773, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 56.800293
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357790381750191674, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 238.2002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988612778869360795, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 56.799805
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988612778485861842, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 238.2002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988612778766134451, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 56.799805
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988612778100405577, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 238.2002
+      objectReference: {fileID: 0}
     - target: {fileID: 5988612777985256193, guid: 106fb313b250ddf43a17cadc3029f271,
         type: 3}
       propertyPath: m_Type
@@ -3015,6 +3096,16 @@ PrefabInstance:
     - target: {fileID: 5988612778858109096, guid: 106fb313b250ddf43a17cadc3029f271,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271131420792168446, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988612778699154386, guid: 106fb313b250ddf43a17cadc3029f271,
+        type: 3}
+      propertyPath: m_RaycastTarget
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:

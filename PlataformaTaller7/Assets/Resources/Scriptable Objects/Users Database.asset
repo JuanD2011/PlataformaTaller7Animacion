@@ -35,7 +35,7 @@ MonoBehaviour:
       accessory: 0
   - username: Daniel
     password: Daniel
-    sprite: {fileID: 21300000, guid: 15c4e5b3c0e4ed54f9cd1e24cc2809b4, type: 3}
+    sprite: {fileID: 21300000, guid: 6f30055e5d5d577479173bfeccad4bf7, type: 3}
     properties:
       male: 1
       skinColor: {r: 0.8117648, g: 0.5529412, b: 0.38431376, a: 1}
@@ -45,7 +45,7 @@ MonoBehaviour:
       accessory: 0
   - username: Juan
     password: Juan
-    sprite: {fileID: 21300000, guid: 6f30055e5d5d577479173bfeccad4bf7, type: 3}
+    sprite: {fileID: 21300000, guid: 57971a35c611c314f90e2cd21326b372, type: 3}
     properties:
       male: 1
       skinColor: {r: 0.8117648, g: 0.5529412, b: 0.38431376, a: 1}
@@ -55,7 +55,7 @@ MonoBehaviour:
       accessory: 1
   - username: 123
     password: 123
-    sprite: {fileID: 21300000, guid: b50fc511267079d4cb421c2e92872c5e, type: 3}
+    sprite: {fileID: 21300000, guid: 6f30055e5d5d577479173bfeccad4bf7, type: 3}
     properties:
       male: 1
       skinColor: {r: 0.8117648, g: 0.5529412, b: 0.38431376, a: 1}
